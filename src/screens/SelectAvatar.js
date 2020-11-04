@@ -19,7 +19,7 @@ class SelectAvatar extends Component {
                     <TouchableOpacity onPress={() => {
                         this.props.navigation.goBack();
                     }}>
-                        <Image source={require('_assets/back.png')} style={[styles.logo,{marginTop: 15}]} />
+                        <Image source={require('_assets/back.png')} style={[styles.logo, { marginTop: 15 }]} />
                     </TouchableOpacity>
                     <View style={styles.title}>
                         <Image source={require('_assets/midaslogo.png')} style={styles.logo} />
@@ -88,16 +88,26 @@ const styles = StyleSheet.create({
         marginStart: 15,
     },
     imageContainer: {
-        marginTop: 25, flexDirection: 'row', justifyContent: 'center'
+        marginTop: 25,
+        flexDirection: 'row',
+        justifyContent: 'center'
     },
     firstImage: {
-        marginTop: '10%', borderWidth: 1.5, borderColor: 'navy', borderRadius: 5, alignSelf: 'center'
+        marginTop: '10%',
+        borderWidth: 1.5,
+        borderColor: '#0057E7',
+        borderRadius: 5, alignSelf: 'center'
     },
     leftSideImage: {
-        borderWidth: 1.5, borderColor: 'navy', borderRadius: 5
+        borderWidth: 1.5,
+        borderColor: '#0057E7',
+        borderRadius: 5
     },
     rightSideImage: {
-        marginLeft: 25, borderWidth: 1.5, borderColor: 'navy', borderRadius: 5
+        marginLeft: 25,
+        borderWidth: 1.5,
+        borderColor: '#0057E7',
+        borderRadius: 5
     },
 });
 
