@@ -19,7 +19,7 @@ class SelectAvatar extends Component {
                     <TouchableOpacity onPress={() => {
                         this.props.navigation.goBack();
                     }}>
-                        <Image source={require('_assets/back.png')} style={[styles.logo, { marginTop: 15 }]} />
+                        <Image source={require('_assets/back.png')} style={{ marginTop: 15 }} />
                     </TouchableOpacity>
                     <View style={styles.title}>
                         <Image source={require('_assets/midaslogo.png')} style={styles.logo} />
@@ -29,31 +29,40 @@ class SelectAvatar extends Component {
                     <View style={styles.header} />
                 </View>
 
-                <View>
-                    <TouchableOpacity onPress={response}>
-                        <Image source={require('_assets/male1.png')}
-                            style={styles.firstImage}></Image>
-                    </TouchableOpacity>
-                </View>
-                <View style={styles.imageContainer}>
-                    <TouchableOpacity onPress={response}>
-                        <Image source={require('_assets/male2.png')}
-                            style={styles.leftSideImage}></Image>
-                    </TouchableOpacity>
-                    <TouchableOpacity onPress={response}>
-                        <Image source={require('_assets/male3.png')}
-                            style={styles.rightSideImage}></Image>
-                    </TouchableOpacity>
-                </View>
-                <View style={styles.imageContainer}>
-                    <TouchableOpacity onPress={response}>
-                        <Image source={require('_assets/female1.png')}
-                            style={styles.leftSideImage}></Image>
-                    </TouchableOpacity>
-                    <TouchableOpacity onPress={response}>
-                        <Image source={require('_assets/female2.png')}
-                            style={styles.rightSideImage}></Image>
-                    </TouchableOpacity>
+                <View style={styles.imageMainContainer}>
+
+                    <View style={styles.imageContainer}>
+                        <TouchableOpacity onPress={response}>
+                            <Image source={require('_assets/male1.png')}
+                                style={styles.image}></Image>
+                        </TouchableOpacity>
+
+                        <TouchableOpacity onPress={response}>
+                            <Image source={require('_assets/male3.png')}
+                                style={styles.image}></Image>
+                        </TouchableOpacity>
+                        <TouchableOpacity onPress={response}>
+                            <Image source={require('_assets/female3.png')}
+                                style={styles.image}></Image>
+                        </TouchableOpacity>
+                    </View>
+
+                    <View style={styles.imageContainer}>
+                        <TouchableOpacity onPress={response}>
+                            <Image source={require('_assets/male2.png')}
+                                style={styles.image}></Image>
+                        </TouchableOpacity>
+                        <TouchableOpacity onPress={response}>
+                            <Image source={require('_assets/female2.png')}
+                                style={styles.image}></Image>
+                        </TouchableOpacity>
+
+                        <TouchableOpacity onPress={response}>
+                            <Image source={require('_assets/female1.png')}
+                                style={styles.image}></Image>
+                        </TouchableOpacity>
+                    </View>
+
                 </View>
 
             </View>
@@ -76,7 +85,9 @@ const styles = StyleSheet.create({
     },
     logo: {
         alignSelf: 'center',
-        marginTop: 10
+        marginTop: 10,
+        width: 35,
+        height: 21,
     },
     text: {
         width: '70%',
@@ -85,30 +96,23 @@ const styles = StyleSheet.create({
         fontSize: 24,
         marginTop: 10,
         alignSelf: 'center',
-        marginStart: 15,
+        marginStart: 30,
+    },
+    imageMainContainer: {
+        marginTop: '10%'
     },
     imageContainer: {
-        marginTop: 25,
+        marginTop: 20,
         flexDirection: 'row',
-        justifyContent: 'center'
+        justifyContent: 'space-evenly'
     },
-    firstImage: {
-        marginTop: '10%',
+    image: {
+        width: 72,
+        height: 80,
         borderWidth: 1.5,
         borderColor: '#0057E7',
-        borderRadius: 5, alignSelf: 'center'
-    },
-    leftSideImage: {
-        borderWidth: 1.5,
-        borderColor: '#0057E7',
-        borderRadius: 5
-    },
-    rightSideImage: {
-        marginLeft: 25,
-        borderWidth: 1.5,
-        borderColor: '#0057E7',
-        borderRadius: 5
-    },
+        borderRadius: 5,
+    }
 });
 
 export default SelectAvatar;

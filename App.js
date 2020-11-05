@@ -19,6 +19,7 @@ import Home from '_screens/Home';
 import AskAdvisor from '_screens/AskAdvisor';
 import ChooseOption from '_screens/ChooseOption';
 import SelectAvatar from '_screens/SelectAvatar';
+import UserChoice from '_screens/UserChoice';
 
 
 const App = () => {
