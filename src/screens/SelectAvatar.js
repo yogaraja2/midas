@@ -2,77 +2,68 @@ import React, { Component } from 'react';
 import { Image, View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { Colors } from '_styles';
 
-class SelectAvatar extends Component {
-
-    constructor() {
-        super();
+const SelectAvatar = ({ navigation }) => {
+    const routeName = navigation.state.routeName
+    const goToUserChooice = () => {
+        navigation.navigate('UserChoice');
     }
+    return (
+        <View style={styles.mainContainer}>
 
-    render() {
-        const response = () => {
-            alert('image clicked')
-        }
-        return (
-            <View style={styles.mainContainer}>
+            <View style={styles.header}>
+                <TouchableOpacity onPress={() => {
+                    navigation.goBack();
+                }}>
+                    <Image source={require('_assets/back.png')} style={{ marginTop: 15 }} />
+                </TouchableOpacity>
+                <Image source={require('_assets/midaslogo.png')} style={styles.logo} />
+                <Text style={styles.text}>Select Your Avatar</Text>
+            </View>
 
-                <View style={styles.header}>
-                    <TouchableOpacity onPress={() => {
-                        this.props.navigation.goBack();
-                    }}>
-                        <Image source={require('_assets/back.png')} style={{ marginTop: 15 }} />
+            <View style={styles.imageMainContainer}>
+
+                <View style={styles.imageContainer}>
+                    <TouchableOpacity onPress={goToUserChooice}>
+                        <Image source={require('_assets/male1.png')}
+                            style={styles.image}></Image>
                     </TouchableOpacity>
-                    <View style={styles.title}>
-                        <Image source={require('_assets/midaslogo.png')} style={styles.logo} />
 
-                        <Text style={styles.text}>Select Your Avatar</Text>
-                    </View>
-                    <View style={styles.header} />
+                    <TouchableOpacity onPress={goToUserChooice}>
+                        <Image source={require('_assets/male3.png')}
+                            style={styles.image}></Image>
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress={goToUserChooice}>
+                        <Image source={require('_assets/female3.png')}
+                            style={styles.image}></Image>
+                    </TouchableOpacity>
                 </View>
 
-                <View style={styles.imageMainContainer}>
+                <View style={styles.imageContainer}>
+                    <TouchableOpacity onPress={goToUserChooice}>
+                        <Image source={require('_assets/male2.png')}
+                            style={styles.image}></Image>
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress={goToUserChooice}>
+                        <Image source={require('_assets/female2.png')}
+                            style={styles.image}></Image>
+                    </TouchableOpacity>
 
-                    <View style={styles.imageContainer}>
-                        <TouchableOpacity onPress={response}>
-                            <Image source={require('_assets/male1.png')}
-                                style={styles.image}></Image>
-                        </TouchableOpacity>
-
-                        <TouchableOpacity onPress={response}>
-                            <Image source={require('_assets/male3.png')}
-                                style={styles.image}></Image>
-                        </TouchableOpacity>
-                        <TouchableOpacity onPress={response}>
-                            <Image source={require('_assets/female3.png')}
-                                style={styles.image}></Image>
-                        </TouchableOpacity>
-                    </View>
-
-                    <View style={styles.imageContainer}>
-                        <TouchableOpacity onPress={response}>
-                            <Image source={require('_assets/male2.png')}
-                                style={styles.image}></Image>
-                        </TouchableOpacity>
-                        <TouchableOpacity onPress={response}>
-                            <Image source={require('_assets/female2.png')}
-                                style={styles.image}></Image>
-                        </TouchableOpacity>
-
-                        <TouchableOpacity onPress={response}>
-                            <Image source={require('_assets/female1.png')}
-                                style={styles.image}></Image>
-                        </TouchableOpacity>
-                    </View>
-
+                    <TouchableOpacity onPress={goToUserChooice}>
+                        <Image source={require('_assets/female1.png')}
+                            style={styles.image}></Image>
+                    </TouchableOpacity>
                 </View>
 
             </View>
-        );
-    }
+
+        </View>
+    );
 }
 
 const styles = StyleSheet.create({
     mainContainer: {
-        flex: 1
+        flex: 1,
+        backgroundColor:'white'
     },
     header: {
         flexDirection: 'row',
@@ -110,7 +101,7 @@ const styles = StyleSheet.create({
         width: 72,
         height: 80,
         borderWidth: 1.5,
-        borderColor: '#0057E7',
+        borderColor: 'grey',
         borderRadius: 5,
     }
 });

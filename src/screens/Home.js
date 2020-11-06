@@ -62,8 +62,8 @@ const styles = StyleSheet.create({
     },
     button: {
         justifyContent: 'center',
-        width: "29%", 
-        height: 50, 
+        width: "29%",
+        height: 50,
         backgroundColor: 'white',
         borderRadius: 3,
     },

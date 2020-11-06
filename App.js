@@ -20,6 +20,8 @@ import AskAdvisor from '_screens/AskAdvisor';
 import ChooseOption from '_screens/ChooseOption';
 import SelectAvatar from '_screens/SelectAvatar';
 import UserChoice from '_screens/UserChoice';
+import SelectDream from '_screens/SelectDream';
+
 
 
 const App = () => {
@@ -33,6 +35,7 @@ const App = () => {
 export default App;
 
 const AppNavigator = createStackNavigator({
+  
   Home: {
     screen: Home,
     navigationOptions: {
@@ -54,6 +57,12 @@ const AppNavigator = createStackNavigator({
   SelectAvatar: {
     screen: SelectAvatar,
     navigationOptions: {
+      header: null
+    }
+  },
+  UserChoice:{
+    screen: UserChoice,
+    navigationOptions:{
       header: null
     }
   },
