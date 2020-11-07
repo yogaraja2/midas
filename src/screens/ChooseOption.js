@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
-import { TouchableOpacity, View, Text, StyleSheet, Image } from 'react-native'
-
+import { TouchableOpacity, View, Text, StyleSheet, Image, SafeAreaView } from 'react-native'
 class ChooseOption extends Component {
 
     constructor() {
@@ -18,7 +17,7 @@ class ChooseOption extends Component {
             alert('Image clicked')
         }
         return (
-            <View style={styles.mainContainer}>
+            <SafeAreaView style={styles.mainContainer}>
 
                 <View style={styles.header}>
                     <TouchableOpacity onPress={() => {
@@ -52,7 +51,7 @@ class ChooseOption extends Component {
                     </TouchableOpacity>
                 </View>
 
-            </View>
+            </SafeAreaView>
         );
     }
 }

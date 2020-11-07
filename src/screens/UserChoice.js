@@ -1,5 +1,6 @@
 import React, { Component, useState } from 'react';
-import { Text, TextInput, Image, View, StyleSheet, TouchableOpacity } from 'react-native';
+import { Text, TextInput, Image, View, StyleSheet, TouchableOpacity, SafeAreaView } from 'react-native';
+import { } from 'react-native-safe-area-context';
 import { Colors } from '_styles';
 
 class UserChoice extends Component {
@@ -12,15 +13,15 @@ class UserChoice extends Component {
     }
 
     response = (index) => {
-        // alert('clicked')
         this.setState({ gameLength: index })
     }
     response1 = (index) => {
         this.setState({ role: index })
     }
+
     render(props) {
         return (
-            <View style={{ flex: 1, backgroundColor: 'white' }}>
+            <SafeAreaView style={{ flex: 1, backgroundColor: 'white' }}>
 
                 <View style={styles.header}>
                     <TouchableOpacity onPress={() => {
@@ -43,20 +44,20 @@ class UserChoice extends Component {
                 <View style={styles.groups}>
                     <Text style={styles.text}>Game Length</Text>
                     <View style={styles.lengthButtonContainer}>
-                        <TouchableOpacity style={[styles.gameLengthButtons, { backgroundColor: this.state.gameLength == 0 ? Colors.BUTTON_TEXT : 'grey' }]}
+                        <TouchableOpacity style={[styles.gameLengthButtons, { backgroundColor: this.state.gameLength == 0 ? '#0057E7' : 'grey' }]}
                             onPress={() => this.response(0)}>
                             <Image source={require('_assets/singleDollar.png')} style={styles.singleDollarIcon}></Image>
                             <Text style={styles.buttonText}>Short</Text>
                             <Text style={styles.buttonText}>10 Turns</Text>
                         </TouchableOpacity>
 
-                        <TouchableOpacity style={[styles.gameLengthButtons, { backgroundColor: this.state.gameLength == 1 ? Colors.BUTTON_TEXT : 'grey' }]} onPress={() => this.response(1)}>
+                        <TouchableOpacity style={[styles.gameLengthButtons, { backgroundColor: this.state.gameLength == 1 ? '#0057E7' : 'grey' }]} onPress={() => this.response(1)}>
                             <Image source={require('_assets/doubleDollar.png')} style={styles.doubleDollarIcon}></Image>
                             <Text style={styles.buttonText}>Medium</Text>
                             <Text style={styles.buttonText}>20 Turns</Text>
                         </TouchableOpacity>
 
-                        <TouchableOpacity style={[styles.gameLengthButtons, { backgroundColor: this.state.gameLength == 2 ? Colors.BUTTON_TEXT : 'grey' }]} onPress={() => this.response(2)}>
+                        <TouchableOpacity style={[styles.gameLengthButtons, { backgroundColor: this.state.gameLength == 2 ? '#0057E7' : 'grey' }]} onPress={() => this.response(2)}>
                             <Image source={require('_assets/tripleDollar.png')} style={styles.tripleDollarIcon}></Image>
                             <Text style={styles.longButtonText}>Long</Text>
                             <Text style={styles.longButtonText}>40 Turns</Text>
@@ -67,7 +68,7 @@ class UserChoice extends Component {
                 <View style={styles.groups}>
                     <Text style={styles.text}>Role</Text>
                     <View style={styles.roleButtonContainer}>
-                        <TouchableOpacity style={[styles.roleButtons, { backgroundColor: this.state.role == 0 ? Colors.BUTTON_TEXT : 'grey' }]}
+                        <TouchableOpacity style={[styles.roleButtons, { backgroundColor: this.state.role == 0 ? '#0057E7' : 'grey' }]}
                             onPress={() => this.response1(0)}
                         >
                             <Image source={require('_assets/lock1.png')}
@@ -75,14 +76,14 @@ class UserChoice extends Component {
                             <Text style={styles.easyLockText}>Easy</Text>
                         </TouchableOpacity>
 
-                        <TouchableOpacity style={[styles.roleButtons, { backgroundColor: this.state.role == 1 ? Colors.BUTTON_TEXT : 'grey' }]}
+                        <TouchableOpacity style={[styles.roleButtons, { backgroundColor: this.state.role == 1 ? '#0057E7' : 'grey' }]}
                             onPress={() => this.response1(1)}
                         >
                             <Image source={require('_assets/lock2.png')}
                                 style={styles.standardLock}></Image>
                         </TouchableOpacity>
 
-                        <TouchableOpacity style={[styles.roleButtons, { backgroundColor: this.state.role == 2 ? Colors.BUTTON_TEXT : 'grey' }]}
+                        <TouchableOpacity style={[styles.roleButtons, { backgroundColor: this.state.role == 2 ? '#0057E7' : 'grey' }]}
                             onPress={() => this.response1(2)}
                         >
                             <Image source={require('_assets/lock3.png')}
@@ -91,7 +92,7 @@ class UserChoice extends Component {
                     </View>
                 </View>
 
-            </View>
+            </SafeAreaView>
         );
     }
 }
@@ -143,18 +144,6 @@ const styles = StyleSheet.create({
         backgroundColor: 'grey',
         borderRadius: 7,
     },
-    // mediumButton: {
-    //     width: 121,
-    //     height: 147.87,
-    //     backgroundColor: '#C2C2C2' #0057E7,
-    //     borderRadius: 7,
-    // },
-    // advancedButton: {
-    //     width: 122,
-    //     height: 147.87,
-    //     backgroundColor: '#C2C2C2',
-    //     borderRadius: 7,
-    // },
     lengthButtonContainer: {
         width: '100%',
         flexDirection: 'row',

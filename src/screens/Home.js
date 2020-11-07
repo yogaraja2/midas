@@ -1,5 +1,5 @@
 import React from 'react'
-import { Text, View, StyleSheet, ImageBackground, TouchableOpacity } from 'react-native'
+import { Text, View, StyleSheet, ImageBackground, TouchableOpacity, SafeAreaView } from 'react-native'
 import { Colors } from '_styles';
 
 const Home = ({
@@ -17,7 +17,7 @@ const Home = ({
     }
 
     return (
-        <View>
+        <SafeAreaView>
             <ImageBackground source={require('_assets/mainScreen.png')} style={{ justifyContent: 'flex-end', width: '100%', height: '100%' }}>
                 <View style={styles.footer}>
                     <TouchableOpacity
@@ -48,7 +48,7 @@ const Home = ({
                     </TouchableOpacity>
                 </View>
             </ImageBackground>
-        </View>
+        </SafeAreaView>
     );
 }
 

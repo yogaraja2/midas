@@ -1,49 +1,50 @@
 import React, { Component } from 'react';
-import { View, Text, Image, TouchableOpacity, StyleSheet } from 'react-native';
-import { ScrollView } from 'react-native-gesture-handler';
+import { View, Text, Image, TouchableOpacity, StyleSheet, ScrollView, SafeAreaView } from 'react-native';
 import { Colors } from '_styles';
 
 class AskAdvisor extends Component {
     render() {
         return (
-            <ScrollView>
-                <View style={styles.container}>
+            <SafeAreaView>
+                <ScrollView>
+                    <View style={styles.container}>
 
-                    <View style={styles.header}>
-                        <TouchableOpacity onPress={() => {
-                            this.props.navigation.goBack();
-                        }}>
-                            <Image source={require('_assets/back.png')} style={{ marginLeft: 10 }} />
-                        </TouchableOpacity>
-                        <Image source={require('_assets/midaslogo.png')} style={styles.logo} />
+                        <View style={styles.header}>
+                            <TouchableOpacity onPress={() => {
+                                this.props.navigation.goBack();
+                            }}>
+                                <Image source={require('_assets/back.png')} style={{ marginLeft: 10 }} />
+                            </TouchableOpacity>
+                            <Image source={require('_assets/midaslogo.png')} style={styles.logo} />
 
-                    </View>
+                        </View>
 
-                    <Text style={styles.text}>Ask Advisor</Text>
+                        <Text style={styles.text}>Ask Advisor</Text>
 
-                    <Image
-                        source={require('_assets/advisor.png')}
-                        style={styles.image}
-                    ></Image>
+                        <Image
+                            source={require('_assets/advisor.png')}
+                            style={styles.image}
+                        ></Image>
 
-                    <Text style={styles.textContent}>
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam repellendus qui sint voluptate pariatur
-                        molestias ut quisquam, aliquid nam quod cupiditate esse nisi officia. Rerum consequuntur aliquam quisquam maxime
-                        corrupti, error quos? Ipsam optio accusantium atque ratione, veritatis laborum ullam autem itaque odio beatae
-                        expedita tempore molestias enim ad voluptas esse.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam repellendus qui sint voluptate pariatur
-                        molestias ut quisquam, aliquid nam quod cupiditate esse nisi officia. Rerum consequuntur aliquam quisquam maxime
-                        corrupti, error quos? Ipsam optio accusantium atque ratione, veritatis laborum ullam autem itaque odio beatae
-                        xpedita tempore molestias enim ad voluptas esse.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam repellendus qui sint voluptate pariatur
-                        molestias ut quisquam, aliquid nam quod cupiditate esse nisi officia. Rerum consequuntur aliquam quisquam maxime
-                        corrupti, error quos? Ipsam optio accusantium atque ratione, veritatis laborum ullam autem itaque odio beatae
-                        expedita tempore molestias enim ad voluptas esse.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam repellendus qui sint voluptate pariatur
-                        molestias ut quisquam, aliquid nam quod cupiditate esse nisi officia. Rerum consequuntur aliquam quisquam maxime
-                        corrupti, error quos? Ipsam optio accusantium atque ratione, veritatis laborum ullam autem itaque odio beatae
-                        xpedita tempore molestias enim ad voluptas esse.
+                        <Text style={styles.textContent}>
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam repellendus qui sint voluptate pariatur
+                            molestias ut quisquam, aliquid nam quod cupiditate esse nisi officia. Rerum consequuntur aliquam quisquam maxime
+                            corrupti, error quos? Ipsam optio accusantium atque ratione, veritatis laborum ullam autem itaque odio beatae
+                            expedita tempore molestias enim ad voluptas esse.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam repellendus qui sint voluptate pariatur
+                            molestias ut quisquam, aliquid nam quod cupiditate esse nisi officia. Rerum consequuntur aliquam quisquam maxime
+                            corrupti, error quos? Ipsam optio accusantium atque ratione, veritatis laborum ullam autem itaque odio beatae
+                            xpedita tempore molestias enim ad voluptas esse.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam repellendus qui sint voluptate pariatur
+                            molestias ut quisquam, aliquid nam quod cupiditate esse nisi officia. Rerum consequuntur aliquam quisquam maxime
+                            corrupti, error quos? Ipsam optio accusantium atque ratione, veritatis laborum ullam autem itaque odio beatae
+                            expedita tempore molestias enim ad voluptas esse.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam repellendus qui sint voluptate pariatur
+                            molestias ut quisquam, aliquid nam quod cupiditate esse nisi officia. Rerum consequuntur aliquam quisquam maxime
+                            corrupti, error quos? Ipsam optio accusantium atque ratione, veritatis laborum ullam autem itaque odio beatae
+                            xpedita tempore molestias enim ad voluptas esse.
                 </Text>
 
-                </View>
-            </ScrollView>
+                    </View>
+                </ScrollView>
+            </SafeAreaView>
         );
     }
 }

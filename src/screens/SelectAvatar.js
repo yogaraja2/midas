@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Image, View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { Image, View, Text, StyleSheet, TouchableOpacity, SafeAreaView } from 'react-native';
 import { Colors } from '_styles';
 
 const SelectAvatar = ({ navigation }) => {
@@ -7,9 +7,9 @@ const SelectAvatar = ({ navigation }) => {
     const goToUserChooice = () => {
         navigation.navigate('UserChoice');
     }
-    return (
-        <View style={styles.mainContainer}>
 
+    return (
+        <SafeAreaView style={styles.mainContainer}>
             <View style={styles.header}>
                 <TouchableOpacity onPress={() => {
                     navigation.goBack();
@@ -20,80 +20,69 @@ const SelectAvatar = ({ navigation }) => {
                 <Text style={styles.text}>Select Your Avatar</Text>
             </View>
 
-            <View style={styles.imageMainContainer}>
+            <View style={styles.imageContainer}>
+                <TouchableOpacity onPress={goToUserChooice}>
+                    <Image source={require('_assets/male1.png')}
+                        style={styles.image}></Image>
+                </TouchableOpacity>
 
-                <View style={styles.imageContainer}>
-                    <TouchableOpacity onPress={goToUserChooice}>
-                        <Image source={require('_assets/male1.png')}
-                            style={styles.image}></Image>
-                    </TouchableOpacity>
-
-                    <TouchableOpacity onPress={goToUserChooice}>
-                        <Image source={require('_assets/male3.png')}
-                            style={styles.image}></Image>
-                    </TouchableOpacity>
-                    <TouchableOpacity onPress={goToUserChooice}>
-                        <Image source={require('_assets/female3.png')}
-                            style={styles.image}></Image>
-                    </TouchableOpacity>
-                </View>
-
-                <View style={styles.imageContainer}>
-                    <TouchableOpacity onPress={goToUserChooice}>
-                        <Image source={require('_assets/male2.png')}
-                            style={styles.image}></Image>
-                    </TouchableOpacity>
-                    <TouchableOpacity onPress={goToUserChooice}>
-                        <Image source={require('_assets/female2.png')}
-                            style={styles.image}></Image>
-                    </TouchableOpacity>
-
-                    <TouchableOpacity onPress={goToUserChooice}>
-                        <Image source={require('_assets/female1.png')}
-                            style={styles.image}></Image>
-                    </TouchableOpacity>
-                </View>
-
+                <TouchableOpacity onPress={goToUserChooice}>
+                    <Image source={require('_assets/male3.png')}
+                        style={styles.image}></Image>
+                </TouchableOpacity>
+                <TouchableOpacity onPress={goToUserChooice}>
+                    <Image source={require('_assets/female3.png')}
+                        style={styles.image}></Image>
+                </TouchableOpacity>
             </View>
 
-        </View>
+            <View style={styles.imageContainer}>
+                <TouchableOpacity onPress={goToUserChooice}>
+                    <Image source={require('_assets/male2.png')}
+                        style={styles.image}></Image>
+                </TouchableOpacity>
+                <TouchableOpacity onPress={goToUserChooice}>
+                    <Image source={require('_assets/female2.png')}
+                        style={styles.image}></Image>
+                </TouchableOpacity>
+
+                <TouchableOpacity onPress={goToUserChooice}>
+                    <Image source={require('_assets/female1.png')}
+                        style={styles.image}></Image>
+                </TouchableOpacity>
+            </View>
+
+        </SafeAreaView>
     );
 }
 
 const styles = StyleSheet.create({
     mainContainer: {
         flex: 1,
-        backgroundColor:'white'
+        backgroundColor: 'white'
     },
     header: {
+        width: '100%',
         flexDirection: 'row',
-        marginTop: 10,
+        marginTop: 20,
         marginStart: 10,
-        justifyContent: 'space-between'
-    },
-    title: {
-        flexDirection: 'row',
     },
     logo: {
-        alignSelf: 'center',
-        marginTop: 10,
+        marginTop: 15,
+        marginLeft: 10,
         width: 35,
         height: 21,
     },
     text: {
-        width: '70%',
         color: Colors.BUTTON_TEXT,
         fontWeight: 'bold',
         fontSize: 24,
         marginTop: 10,
-        alignSelf: 'center',
+        alignSelf: 'flex-start',
         marginStart: 30,
     },
-    imageMainContainer: {
-        marginTop: '10%'
-    },
     imageContainer: {
-        marginTop: 20,
+        marginTop: '10%',
         flexDirection: 'row',
         justifyContent: 'space-evenly'
     },

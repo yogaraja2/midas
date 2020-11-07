@@ -15,12 +15,14 @@ import {
 } from 'react-native';
 import { createAppContainer, NavigationActions } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
+import WelcomeScreen from '_screens/WelcomeScreen'
 import Home from '_screens/Home';
 import AskAdvisor from '_screens/AskAdvisor';
 import ChooseOption from '_screens/ChooseOption';
 import SelectAvatar from '_screens/SelectAvatar';
 import UserChoice from '_screens/UserChoice';
 import SelectDream from '_screens/SelectDream';
+
 
 
 
@@ -35,7 +37,14 @@ const App = () => {
 export default App;
 
 const AppNavigator = createStackNavigator({
-  
+
+  // WelcomeScreen: {
+  //   screen: WelcomeScreen,
+  //   navigationOptions: {
+  //     header: null
+  //   }
+  // },
+
   Home: {
     screen: Home,
     navigationOptions: {
@@ -60,9 +69,9 @@ const AppNavigator = createStackNavigator({
       header: null
     }
   },
-  UserChoice:{
+  UserChoice: {
     screen: UserChoice,
-    navigationOptions:{
+    navigationOptions: {
       header: null
     }
   },
