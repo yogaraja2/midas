@@ -1,36 +1,63 @@
 import React from 'react';
-import { View, Text, Image, TouchableOpacity, StyleSheet } from 'react-native';
-import { ScrollView } from 'react-native-gesture-handler';
-import { SwipeListView } from 'react-native-swipe-list-view';
-import { Colors } from '_styles';
+import { View, Text, Image, TouchableOpacity, StyleSheet, ImageBackground, SafeAreaView, ScrollView } from 'react-native';
 
 const SelectDream = () => {
     return (
-        <View style={{ flex: 1, backgroundColor: '#0057E7' }}>
-
+        <SafeAreaView style={styles.mainContainer}>
             <View style={styles.header}>
                 <TouchableOpacity onPress={() => {
                     navigation.goBack();
                 }}>
-                    <Image source={require('_assets/whiteBack.png')} style={{ width: 21, height: 21, marginTop: 15, marginLeft: 10 }} />
+                    <Image source={require('_assets/whiteBack.png')} style={styles.backLogo} />
                 </TouchableOpacity>
                 <Image source={require('_assets/midaslogo.png')} style={styles.logo} />
                 <Text style={styles.text}>Select Dream</Text>
             </View>
 
-            <ScrollView style={{ flexDirection: 'row' }}>
-                <View>
-                    <Image source={require('_assets/border.png')} style={{ width: 279, height: 279 }}>
-                        <Image source={require('_assets/traveller.png')}></Image>
-                    </Image>
+            <ScrollView horizontal={true}>
+                <View style={styles.body}>
+                    <ImageBackground source={require('_assets/border.png')} style={styles.border}>
+                        <Image source={require('_assets/traveller.png')} style={styles.image}></Image>
+                    </ImageBackground>
+                    <Text style={[styles.bodyText, { fontSize: 32, marginTop: 40 }]}> Visit Taj Mahal</Text>
+                    <Text style={[styles.bodyText, { fontSize: 24, marginTop: 15 }]}>Cost : $50000</Text>
+                    <Text style={[styles.bodyText, { fontSize: 24, marginTop: 5 }]}>Points : 13500</Text>
+                </View>
+                <View style={styles.body}>
+                    <ImageBackground source={require('_assets/border.png')} style={styles.border}>
+                        <Image source={require('_assets/traveller.png')} style={styles.image}></Image>
+                    </ImageBackground>
+                    <Text style={[styles.bodyText, { fontSize: 32, marginTop: 40 }]}> Visit Chennai</Text>
+                    <Text style={[styles.bodyText, { fontSize: 24, marginTop: 15 }]}>Cost : $50000</Text>
+                    <Text style={[styles.bodyText, { fontSize: 24, marginTop: 5 }]}>Points : 13500</Text>
+                </View>
+                <View style={styles.body}>
+                    <ImageBackground source={require('_assets/border.png')} style={styles.border}>
+                        <Image source={require('_assets/traveller.png')} style={styles.image}></Image>
+                    </ImageBackground>
+                    <Text style={[styles.bodyText, { fontSize: 32, marginTop: 40 }]}> Visit London</Text>
+                    <Text style={[styles.bodyText, { fontSize: 24, marginTop: 15 }]}>Cost : $50000</Text>
+                    <Text style={[styles.bodyText, { fontSize: 24, marginTop: 5 }]}>Points : 13500</Text>
+                </View>
+                <View style={styles.body}>
+                    <ImageBackground source={require('_assets/border.png')} style={styles.border}>
+                        <Image source={require('_assets/traveller.png')} style={styles.image}></Image>
+                    </ImageBackground>
+                    <Text style={[styles.bodyText, { fontSize: 32, marginTop: 40 }]}> Visit Paris</Text>
+                    <Text style={[styles.bodyText, { fontSize: 24, marginTop: 15 }]}>Cost : $50000</Text>
+                    <Text style={[styles.bodyText, { fontSize: 24, marginTop: 5 }]}>Points : 13500</Text>
                 </View>
             </ScrollView>
 
-        </View>
+        </SafeAreaView>
     );
 }
 
 const styles = StyleSheet.create({
+    mainContainer: {
+        flex: 1,
+        backgroundColor: '#0057E7',
+    },
     header: {
         width: '100%',
         flexDirection: 'row',
@@ -45,9 +72,36 @@ const styles = StyleSheet.create({
     text: {
         color: '#FFFFFF',
         fontWeight: 'bold',
-        fontSize: 22,
+        fontSize: 24,
         marginTop: 10,
-        marginStart: 60,
+        marginStart: 50,
+    },
+    backLogo: {
+        width: 21,
+        height: 21,
+        marginTop: 15,
+        marginLeft: 10
+    },
+    body: {
+        alignItems: 'center',
+        marginVertical: '8%',
+        marginStart: 30,
+
+    },
+    border: {
+        width: 279,
+        height: 279,
+        justifyContent: 'center',
+    },
+    image: {
+        width: 215,
+        height: 215,
+        alignSelf: 'center',
+        resizeMode: 'contain',
+    },
+    bodyText: {
+        fontWeight: 'bold',
+        color: '#FFFFFF',
     },
 });
 

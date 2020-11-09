@@ -1,11 +1,3 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow strict-local
- */
-
 import React from 'react';
 import {
   BackHandler,
@@ -15,7 +7,7 @@ import {
 } from 'react-native';
 import { createAppContainer, NavigationActions } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
-import WelcomeScreen from '_screens/WelcomeScreen'
+import SplashScreen from '_screens/SplashScreen'
 import Home from '_screens/Home';
 import AskAdvisor from '_screens/AskAdvisor';
 import ChooseOption from '_screens/ChooseOption';
@@ -38,12 +30,19 @@ export default App;
 
 const AppNavigator = createStackNavigator({
 
-  // WelcomeScreen: {
-  //   screen: WelcomeScreen,
+  // SelectDream: {
+  //   screen: SelectDream,
   //   navigationOptions: {
   //     header: null
   //   }
   // },
+
+  SplashScreen: {
+    screen: SplashScreen,
+    navigationOptions: {
+      header: null
+    }
+  },
 
   Home: {
     screen: Home,
@@ -71,6 +70,12 @@ const AppNavigator = createStackNavigator({
   },
   UserChoice: {
     screen: UserChoice,
+    navigationOptions: {
+      header: null
+    }
+  },
+  SelectDream: {
+    screen: SelectDream,
     navigationOptions: {
       header: null
     }

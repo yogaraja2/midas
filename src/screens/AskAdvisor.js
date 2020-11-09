@@ -6,21 +6,17 @@ class AskAdvisor extends Component {
     render() {
         return (
             <SafeAreaView>
+                <View style={styles.header}>
+                    <TouchableOpacity onPress={() => {
+                        this.props.navigation.goBack();
+                    }}>
+                        <Image source={require('_assets/back.png')} style={{ marginLeft: 10 }} />
+                    </TouchableOpacity>
+                    <Image source={require('_assets/midaslogo.png')} style={styles.logo} />
+                    <Text style={styles.text}>Ask Advisor</Text>
+                </View>
                 <ScrollView>
                     <View style={styles.container}>
-
-                        <View style={styles.header}>
-                            <TouchableOpacity onPress={() => {
-                                this.props.navigation.goBack();
-                            }}>
-                                <Image source={require('_assets/back.png')} style={{ marginLeft: 10 }} />
-                            </TouchableOpacity>
-                            <Image source={require('_assets/midaslogo.png')} style={styles.logo} />
-
-                        </View>
-
-                        <Text style={styles.text}>Ask Advisor</Text>
-
                         <Image
                             source={require('_assets/advisor.png')}
                             style={styles.image}
@@ -55,15 +51,15 @@ const styles = StyleSheet.create({
         flex: 1,
     },
     header: {
+        width:'100%',
         flexDirection: 'row',
-        marginTop: 25,
+        marginTop: '10%',
     },
     text: {
         color: Colors.BUTTON_TEXT,
         fontWeight: 'bold',
-        fontSize: 24,
-        marginTop: 10,
-        alignSelf: 'center',
+        fontSize: 25,
+        marginStart:'15%',
     },
     textContent: {
         fontSize: 15,
