@@ -2,6 +2,9 @@ import React from 'react';
 import { View, Text, Image, TouchableOpacity, StyleSheet, ImageBackground, SafeAreaView, ScrollView } from 'react-native';
 
 const SelectDream = () => {
+    const response = () =>{
+        alert('Selected');
+    }
     return (
         <SafeAreaView style={styles.mainContainer}>
             <View style={styles.header}>
@@ -15,38 +18,39 @@ const SelectDream = () => {
             </View>
 
             <ScrollView horizontal={true}>
-                <View style={styles.body}>
+                <TouchableOpacity style={styles.body} onPress={response}>
                     <ImageBackground source={require('_assets/border.png')} style={styles.border}>
                         <Image source={require('_assets/traveller.png')} style={styles.image}></Image>
                     </ImageBackground>
                     <Text style={[styles.bodyText, { fontSize: 32, marginTop: 40 }]}> Visit Taj Mahal</Text>
                     <Text style={[styles.bodyText, { fontSize: 24, marginTop: 15 }]}>Cost : $50000</Text>
                     <Text style={[styles.bodyText, { fontSize: 24, marginTop: 5 }]}>Points : 13500</Text>
-                </View>
-                <View style={styles.body}>
+                </TouchableOpacity>
+
+                <TouchableOpacity style={styles.body} onPress={response}>
                     <ImageBackground source={require('_assets/border.png')} style={styles.border}>
                         <Image source={require('_assets/traveller.png')} style={styles.image}></Image>
                     </ImageBackground>
                     <Text style={[styles.bodyText, { fontSize: 32, marginTop: 40 }]}> Visit Chennai</Text>
                     <Text style={[styles.bodyText, { fontSize: 24, marginTop: 15 }]}>Cost : $50000</Text>
                     <Text style={[styles.bodyText, { fontSize: 24, marginTop: 5 }]}>Points : 13500</Text>
-                </View>
-                <View style={styles.body}>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.body} onPress={response}>
                     <ImageBackground source={require('_assets/border.png')} style={styles.border}>
                         <Image source={require('_assets/traveller.png')} style={styles.image}></Image>
                     </ImageBackground>
                     <Text style={[styles.bodyText, { fontSize: 32, marginTop: 40 }]}> Visit London</Text>
                     <Text style={[styles.bodyText, { fontSize: 24, marginTop: 15 }]}>Cost : $50000</Text>
                     <Text style={[styles.bodyText, { fontSize: 24, marginTop: 5 }]}>Points : 13500</Text>
-                </View>
-                <View style={styles.body}>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.body} onPress={response}>
                     <ImageBackground source={require('_assets/border.png')} style={styles.border}>
                         <Image source={require('_assets/traveller.png')} style={styles.image}></Image>
                     </ImageBackground>
                     <Text style={[styles.bodyText, { fontSize: 32, marginTop: 40 }]}> Visit Paris</Text>
                     <Text style={[styles.bodyText, { fontSize: 24, marginTop: 15 }]}>Cost : $50000</Text>
                     <Text style={[styles.bodyText, { fontSize: 24, marginTop: 5 }]}>Points : 13500</Text>
-                </View>
+                </TouchableOpacity>
             </ScrollView>
 
         </SafeAreaView>
@@ -85,8 +89,8 @@ const styles = StyleSheet.create({
     body: {
         alignItems: 'center',
         marginVertical: '8%',
-        marginStart: 30,
-
+        marginStart: 40,
+        // marginEnd:5,
     },
     border: {
         width: 279,

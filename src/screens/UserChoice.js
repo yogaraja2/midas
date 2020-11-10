@@ -1,6 +1,5 @@
 import React, { Component, useState } from 'react';
 import { Text, TextInput, Image, View, StyleSheet, TouchableOpacity, SafeAreaView } from 'react-native';
-import { } from 'react-native-safe-area-context';
 import { Colors } from '_styles';
 
 class UserChoice extends Component {
@@ -16,10 +15,11 @@ class UserChoice extends Component {
         this.setState({ gameLength: index })
     }
     response1 = (index) => {
-        this.setState({ role: index })
+        this.setState({ role: index });
     }
 
     render(props) {
+
         return (
             <SafeAreaView style={{ flex: 1, backgroundColor: 'white' }}>
 

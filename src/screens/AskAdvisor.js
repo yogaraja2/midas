@@ -10,7 +10,7 @@ class AskAdvisor extends Component {
                     <TouchableOpacity onPress={() => {
                         this.props.navigation.goBack();
                     }}>
-                        <Image source={require('_assets/back.png')} style={{ marginLeft: 10 }} />
+                        <Image source={require('_assets/back.png')} style={styles.backLogo} />
                     </TouchableOpacity>
                     <Image source={require('_assets/midaslogo.png')} style={styles.logo} />
                     <Text style={styles.text}>Ask Advisor</Text>
@@ -51,15 +51,20 @@ const styles = StyleSheet.create({
         flex: 1,
     },
     header: {
-        width:'100%',
+        width: '100%',
         flexDirection: 'row',
         marginTop: '10%',
+    },
+    backLogo: {
+        marginLeft: 5,
+        width: 21,
+        height: 21,
     },
     text: {
         color: Colors.BUTTON_TEXT,
         fontWeight: 'bold',
         fontSize: 25,
-        marginStart:'15%',
+        marginStart: '15%',
     },
     textContent: {
         fontSize: 15,

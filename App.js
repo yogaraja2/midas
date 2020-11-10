@@ -14,6 +14,7 @@ import ChooseOption from '_screens/ChooseOption';
 import SelectAvatar from '_screens/SelectAvatar';
 import UserChoice from '_screens/UserChoice';
 import SelectDream from '_screens/SelectDream';
+import House from '_screens/House';
 
 
 
@@ -30,12 +31,19 @@ export default App;
 
 const AppNavigator = createStackNavigator({
 
-  // SelectDream: {
-  //   screen: SelectDream,
-  //   navigationOptions: {
-  //     header: null
-  //   }
-  // },
+  House: {
+    screen: House,
+    navigationOptions: {
+      header: null
+    }
+  },
+
+  SelectDream: {
+    screen: SelectDream,
+    navigationOptions: {
+      header: null
+    }
+  },
 
   SplashScreen: {
     screen: SplashScreen,
@@ -74,12 +82,7 @@ const AppNavigator = createStackNavigator({
       header: null
     }
   },
-  SelectDream: {
-    screen: SelectDream,
-    navigationOptions: {
-      header: null
-    }
-  },
+
 });
 
 const defaultGetStateForAction = AppNavigator.router.getStateForAction;

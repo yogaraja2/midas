@@ -14,7 +14,7 @@ const SelectAvatar = ({ navigation }) => {
                 <TouchableOpacity onPress={() => {
                     navigation.goBack();
                 }}>
-                    <Image source={require('_assets/back.png')} style={{ marginTop: 15 }} />
+                    <Image source={require('_assets/back.png')} style={styles.backLogo} />
                 </TouchableOpacity>
                 <Image source={require('_assets/midaslogo.png')} style={styles.logo} />
                 <Text style={styles.text}>Select Your Avatar</Text>
@@ -71,6 +71,12 @@ const styles = StyleSheet.create({
         marginTop: 15,
         marginLeft: 10,
         width: 35,
+        height: 21,
+    },
+    backLogo: {
+        marginTop: 15,
+        marginLeft: 5,
+        width: 21,
         height: 21,
     },
     text: {

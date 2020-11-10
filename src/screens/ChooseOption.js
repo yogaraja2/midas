@@ -23,7 +23,7 @@ class ChooseOption extends Component {
                     <TouchableOpacity onPress={() => {
                         this.props.navigation.goBack();
                     }}>
-                        <Image source={require('_assets/back.png')} style={{ marginTop: 30, marginLeft: 10 }} />
+                        <Image source={require('_assets/back.png')} style={styles.backLogo} />
                     </TouchableOpacity>
                     <Image
                         source={require('_assets/midaslogo.png')}
@@ -62,6 +62,12 @@ const styles = StyleSheet.create({
     },
     header: {
         flexDirection: 'row',
+    },
+    backLogo: {
+        marginTop: 30,
+        marginLeft: 5,
+        width: 21,
+        height: 21,
     },
     buttonContainer: {
         marginVertical: '10%',
