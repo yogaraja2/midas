@@ -1,10 +1,9 @@
-import React from 'react';
-import { View, Image, Text, StyleSheet, TouchableOpacity, SafeAreaView, ScrollView } from 'react-native';
+import React from 'react'
+import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native'
+import { ScrollView } from 'react-native-gesture-handler';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
-const House = ({navigation}) => {
-    const goToCars = () =>{
-        navigation.navigate('Cars');
-    }
+const Cars = ({navigation}) => {
     return (
         <SafeAreaView style={styles.mainContainer}>
 
@@ -28,84 +27,84 @@ const House = ({navigation}) => {
                 </View>
             </View>
 
-            <Text style={styles.title}>House</Text>
+            <Text style={styles.title}>Cars</Text>
 
             <ScrollView>
 
-                <View style={styles.houseContainer}>
-                    <View style={styles.houseBackground}>
-                        <Image source={require('_assets/studioApt.png')} style={styles.studioApt}></Image>
-                        <Text style={styles.houseName}>Studio Apartment</Text>
+                <View style={styles.carContainer}>
+                    <View style={styles.carBackground}>
+                        <Image source={require('_assets/relisbleCar.png')} style={styles.relisbleCar}></Image>
+                        <Text style={styles.carName}>Relisble Car</Text>
                         <View style={styles.buttonContainer}>
                             <View style={styles.moneyButton}>
                                 <Image source={require('_assets/singleDollar.png')} style={styles.dollarIcon}></Image>
                                 <Text style={styles.moneyText}>$50000</Text>
                             </View>
-                            <TouchableOpacity style={styles.buyButton} onPress={goToCars}>
+                            <TouchableOpacity style={styles.buyButton}>
                                 <Text style={styles.buyText}>Buy</Text>
                             </TouchableOpacity>
                         </View>
                     </View>
                 </View>
 
-                <View style={[styles.houseContainer, { height: 236 }]}>
-                    <View style={styles.houseBackground}>
-                        <Image source={require('_assets/fixerUpper.png')} style={styles.fixerUpper}></Image>
-                        <Text style={styles.houseName}>Fixer Upper</Text>
+                <View style={styles.carContainer}>
+                    <View style={styles.carBackground}>
+                        <Image source={require('_assets/economyCar.png')} style={styles.economyCar}></Image>
+                        <Text style={styles.carName}>Economy Car</Text>
                         <View style={styles.buttonContainer}>
                             <View style={styles.moneyButton}>
                                 <Image source={require('_assets/singleDollar.png')} style={styles.dollarIcon}></Image>
-                                <Text style={styles.moneyText}>$67800</Text>
+                                <Text style={styles.moneyText}>$60000</Text>
                             </View>
-                            <TouchableOpacity style={styles.buyButton} onPress={goToCars}>
+                            <TouchableOpacity style={styles.buyButton}>
                                 <Text style={styles.buyText}>Buy</Text>
                             </TouchableOpacity>
                         </View>
                     </View>
                 </View>
 
-                <View style={[styles.houseContainer, { height: 231, marginTop: 50 }]}>
-                    <View style={styles.houseBackground}>
-                        <Image source={require('_assets/rambler.png')} style={styles.rambler}></Image>
-                        <Text style={styles.houseName}>Rambler</Text>
+                <View style={styles.carContainer}>
+                    <View style={styles.carBackground}>
+                        <Image source={require('_assets/fullyLoadedCar.png')} style={styles.fullLoadedCar}></Image>
+                        <Text style={styles.carName}>Fully Loaded Car</Text>
                         <View style={styles.buttonContainer}>
                             <View style={styles.moneyButton}>
                                 <Image source={require('_assets/singleDollar.png')} style={styles.dollarIcon}></Image>
-                                <Text style={styles.moneyText}>$78500</Text>
+                                <Text style={styles.moneyText}>$70000</Text>
                             </View>
-                            <TouchableOpacity style={styles.buyButton} onPress={goToCars}>
+                            <TouchableOpacity style={styles.buyButton}>
                                 <Text style={styles.buyText}>Buy</Text>
                             </TouchableOpacity>
                         </View>
                     </View>
                 </View>
 
-                <View style={[styles.houseContainer, { height: 216, marginTop: 60 }]}>
-                    <View style={styles.houseBackground}>
-                        <Image source={require('_assets/manssion.png')} style={styles.manssion}></Image>
-                        <Text style={styles.houseName}>Mansion</Text>
+                <View style={styles.carContainer}>
+                    <View style={styles.carBackground}>
+                        <Image source={require('_assets/luxuryCar.png')} style={styles.speedsterCar}></Image>
+                        <Text style={styles.carName}>Luxury Car</Text>
                         <View style={styles.buttonContainer}>
                             <View style={styles.moneyButton}>
                                 <Image source={require('_assets/singleDollar.png')} style={styles.dollarIcon}></Image>
-                                <Text style={styles.moneyText}>$89400</Text>
+                                <Text style={styles.moneyText}>$80000</Text>
                             </View>
-                            <TouchableOpacity style={styles.buyButton} onPress={goToCars}>
+                            <TouchableOpacity style={styles.buyButton}>
                                 <Text style={styles.buyText}>Buy</Text>
                             </TouchableOpacity>
                         </View>
                     </View>
                 </View>
 
-                <View style={[styles.houseContainer, { height: 255, marginTop: 50, bottom: 20 }]}>
-                    <View style={styles.houseBackground}>
-                        <Image source={require('_assets/chateau.png')} style={styles.chateau}></Image>
-                        <Text style={[styles.houseName, { marginTop: 0 }]}>Chateau</Text>
+                <View style={[styles.carContainer,{marginTop:20,bottom:20}]}>
+                    <View style={styles.carBackground}>
+                        <Image source={require('_assets/speedsterCar.png')} style={styles.speedsterCar}></Image>
+                        <Text style={styles.carName}>Speedster Car</Text>
                         <View style={styles.buttonContainer}>
                             <View style={styles.moneyButton}>
                                 <Image source={require('_assets/singleDollar.png')} style={styles.dollarIcon}></Image>
-                                <Text style={styles.moneyText}>$1000000</Text>
+                                <Text style={styles.moneyText}>$100000</Text>
                             </View>
-                            <TouchableOpacity style={styles.buyButton} onPress={goToCars}>
+                            <TouchableOpacity style={styles.buyButton}>
                                 <Text style={styles.buyText}>Buy</Text>
                             </TouchableOpacity>
                         </View>
@@ -180,92 +179,85 @@ const styles = StyleSheet.create({
         fontSize: 30,
         fontWeight: 'bold',
         color: '#0057E7',
-        marginStart: '35%',
+        marginStart: '40%',
         marginTop: '5%'
     },
-    houseContainer: {
+    carContainer: {
         width: '70%',
         height: 222,
         justifyContent: 'flex-end',
         alignSelf: 'center',
-        marginTop: 30
     },
-    houseBackground: {
+    carBackground: {
         width: '100%',
         height: 155,
         backgroundColor: '#0057E7',
         borderRadius: 10
     },
-    houseName: {
+    carName: {
         fontSize: 25,
         fontWeight: 'bold',
         color: 'white',
         textAlign: 'center',
-        marginTop: 15
+        marginTop: 7
     },
-    buttonContainer:{
-        width: '100%', 
-        flexDirection: 'row', 
-        justifyContent: 'space-evenly', 
+    buttonContainer: {
+        width: '100%',
+        flexDirection: 'row',
+        justifyContent: 'space-evenly',
         marginTop: 5
     },
-    moneyButton:{
-        flexDirection: 'row', 
-        width: '50%', 
-        height: 33, 
-        backgroundColor: 'white', 
-        borderRadius: 5, 
-        justifyContent: 'space-evenly', 
+    moneyButton: {
+        flexDirection: 'row',
+        width: '50%',
+        height: 33,
+        backgroundColor: 'white',
+        borderRadius: 5,
+        justifyContent: 'space-evenly',
         alignItems: 'center',
     },
-    buyButton:{
-        width: '25%', 
-        height: 33, 
-        backgroundColor: 'white', 
-        borderRadius: 5, 
+    buyButton: {
+        width: '25%',
+        height: 33,
+        backgroundColor: 'white',
+        borderRadius: 5,
         justifyContent: 'center',
     },
-    buyText:{
-        fontWeight: 'bold', 
-        fontSize: 15, 
-        color: '#0057E7', 
+    buyText: {
+        fontWeight: 'bold',
+        fontSize: 15,
+        color: '#0057E7',
         textAlign: 'center',
     },
-    moneyText:{
-        color: '#0057E7', 
-        fontWeight: 'bold', 
+    moneyText: {
+        color: '#0057E7',
+        fontWeight: 'bold',
         fontSize: 15,
     },
-    studioApt: {
-        width: 120,
-        height: 116,
-        marginTop: -65,
+    relisbleCar: {
+        width: 237,
+        height: 87,
+        marginTop: -30,
         alignSelf: 'center'
     },
-    fixerUpper: {
-        width: 142,
-        height: 133,
-        marginTop: -80,
+    economyCar: {
+        width: 157,
+        height: 84,
+        marginTop: -30,
         alignSelf: 'center'
     },
-    rambler: {
-        width: 225,
-        height: 135,
-        marginTop: -80,
+    fullLoadedCar: {
+        width: 197,
+        height: 93,
+        marginTop: -30,
         alignSelf: 'center'
     },
-    manssion: {
-        width: 260,
-        height: 112,
-        marginTop: -65,
-        alignSelf: 'center'
-    },
-    chateau: {
-        width: 230,
-        height: 160,
-        marginTop: -90,
+    speedsterCar: {
+        width: 198,
+        height: 88,
+        marginTop: -30,
         alignSelf: 'center'
     },
 });
 
-export default House;
+export default Cars;

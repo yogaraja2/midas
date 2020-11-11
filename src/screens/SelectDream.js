@@ -1,9 +1,10 @@
 import React from 'react';
 import { View, Text, Image, TouchableOpacity, StyleSheet, ImageBackground, SafeAreaView, ScrollView } from 'react-native';
 
-const SelectDream = () => {
-    const response = () =>{
-        alert('Selected');
+const SelectDream = ({navigation}) => {
+    
+    const goToHouse = () =>{
+        navigation.navigate('House');
     }
     return (
         <SafeAreaView style={styles.mainContainer}>
@@ -18,7 +19,7 @@ const SelectDream = () => {
             </View>
 
             <ScrollView horizontal={true}>
-                <TouchableOpacity style={styles.body} onPress={response}>
+                <TouchableOpacity style={styles.body} onPress={goToHouse}>
                     <ImageBackground source={require('_assets/border.png')} style={styles.border}>
                         <Image source={require('_assets/traveller.png')} style={styles.image}></Image>
                     </ImageBackground>
@@ -27,7 +28,7 @@ const SelectDream = () => {
                     <Text style={[styles.bodyText, { fontSize: 24, marginTop: 5 }]}>Points : 13500</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity style={styles.body} onPress={response}>
+                <TouchableOpacity style={styles.body} onPress={goToHouse}>
                     <ImageBackground source={require('_assets/border.png')} style={styles.border}>
                         <Image source={require('_assets/traveller.png')} style={styles.image}></Image>
                     </ImageBackground>
@@ -35,7 +36,7 @@ const SelectDream = () => {
                     <Text style={[styles.bodyText, { fontSize: 24, marginTop: 15 }]}>Cost : $50000</Text>
                     <Text style={[styles.bodyText, { fontSize: 24, marginTop: 5 }]}>Points : 13500</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.body} onPress={response}>
+                <TouchableOpacity style={styles.body} onPress={goToHouse}>
                     <ImageBackground source={require('_assets/border.png')} style={styles.border}>
                         <Image source={require('_assets/traveller.png')} style={styles.image}></Image>
                     </ImageBackground>
@@ -43,7 +44,7 @@ const SelectDream = () => {
                     <Text style={[styles.bodyText, { fontSize: 24, marginTop: 15 }]}>Cost : $50000</Text>
                     <Text style={[styles.bodyText, { fontSize: 24, marginTop: 5 }]}>Points : 13500</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.body} onPress={response}>
+                <TouchableOpacity style={styles.body} onPress={goToHouse}>
                     <ImageBackground source={require('_assets/border.png')} style={styles.border}>
                         <Image source={require('_assets/traveller.png')} style={styles.image}></Image>
                     </ImageBackground>

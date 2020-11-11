@@ -2,58 +2,65 @@ import React, { Component } from 'react';
 import { Image, View, Text, StyleSheet, TouchableOpacity, SafeAreaView } from 'react-native';
 import { Colors } from '_styles';
 
-const SelectAvatar = ({ navigation }) => {
-    const routeName = navigation.state.routeName
-    const goToUserChooice = () => {
-        navigation.navigate('UserChoice');
+class SelectAvatar extends Component {
+    constructor() {
+        super()
+        // this.state = { borderColor: 0 }
     }
 
-    return (
-        <SafeAreaView style={styles.mainContainer}>
-            <View style={styles.header}>
-                <TouchableOpacity onPress={() => {
-                    navigation.goBack();
-                }}>
-                    <Image source={require('_assets/back.png')} style={styles.backLogo} />
-                </TouchableOpacity>
-                <Image source={require('_assets/midaslogo.png')} style={styles.logo} />
-                <Text style={styles.text}>Select Your Avatar</Text>
-            </View>
+    goToUserChooice = (index) => {
+        // this.setState({ borderColor: index })
+        this.props.navigation.navigate('UserChoice');
+    }
+    render() {
+        return (
+            <SafeAreaView style={styles.mainContainer}>
+                <View style={styles.header}>
+                    <TouchableOpacity onPress={() => {
+                        this.props.navigation.goBack();
+                    }}>
+                        <Image source={require('_assets/back.png')} style={styles.backLogo} />
+                    </TouchableOpacity>
+                    <Image source={require('_assets/midaslogo.png')} style={styles.logo} />
+                    <Text style={styles.text}>Select Your Avatar</Text>
+                </View>
 
-            <View style={styles.imageContainer}>
-                <TouchableOpacity onPress={goToUserChooice}>
-                    <Image source={require('_assets/male1.png')}
-                        style={styles.image}></Image>
-                </TouchableOpacity>
+                <View style={styles.imageContainer}>
+                    <TouchableOpacity onPress={this.goToUserChooice}>
+                        <Image source={require('_assets/male1.png')}
+                            style={styles.image}></Image>
+                        {/* { borderColor: this.state.borderColor == 1 ? '#0057E7' : 'grey' } */}
+                    </TouchableOpacity>
 
-                <TouchableOpacity onPress={goToUserChooice}>
-                    <Image source={require('_assets/male3.png')}
-                        style={styles.image}></Image>
-                </TouchableOpacity>
-                <TouchableOpacity onPress={goToUserChooice}>
-                    <Image source={require('_assets/female3.png')}
-                        style={styles.image}></Image>
-                </TouchableOpacity>
-            </View>
+                    <TouchableOpacity onPress={this.goToUserChooice}>
+                        <Image source={require('_assets/male3.png')}
+                            style={styles.image}></Image>
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress={this.goToUserChooice}>
+                        <Image source={require('_assets/female3.png')}
+                            style={styles.image}></Image>
+                    </TouchableOpacity>
+                </View>
 
-            <View style={styles.imageContainer}>
-                <TouchableOpacity onPress={goToUserChooice}>
-                    <Image source={require('_assets/male2.png')}
-                        style={styles.image}></Image>
-                </TouchableOpacity>
-                <TouchableOpacity onPress={goToUserChooice}>
-                    <Image source={require('_assets/female2.png')}
-                        style={styles.image}></Image>
-                </TouchableOpacity>
+                <View style={styles.imageContainer}>
+                    <TouchableOpacity onPress={this.goToUserChooice}>
+                        <Image source={require('_assets/male2.png')}
+                            style={styles.image}></Image>
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress={this.goToUserChooice}>
+                        <Image source={require('_assets/female2.png')}
+                            style={styles.image}></Image>
+                    </TouchableOpacity>
 
-                <TouchableOpacity onPress={goToUserChooice}>
-                    <Image source={require('_assets/female1.png')}
-                        style={styles.image}></Image>
-                </TouchableOpacity>
-            </View>
+                    <TouchableOpacity onPress={this.goToUserChooice}>
+                        <Image source={require('_assets/female1.png')}
+                            style={styles.image}></Image>
+                    </TouchableOpacity>
+                </View>
 
-        </SafeAreaView>
-    );
+            </SafeAreaView>
+        );
+    }
 }
 
 const styles = StyleSheet.create({
@@ -96,7 +103,7 @@ const styles = StyleSheet.create({
         width: 72,
         height: 80,
         borderWidth: 1.5,
-        borderColor: 'grey',
+        borderColor: '#0057E7',
         borderRadius: 5,
     }
 });

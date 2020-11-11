@@ -1,4 +1,4 @@
-import React, { Component, useState } from 'react';
+import React, { Component } from 'react';
 import { Text, TextInput, Image, View, StyleSheet, TouchableOpacity, SafeAreaView } from 'react-native';
 import { Colors } from '_styles';
 
@@ -16,10 +16,11 @@ class UserChoice extends Component {
     }
     response1 = (index) => {
         this.setState({ role: index });
+        this.props.navigation.navigate('SelectDream');
     }
 
-    render(props) {
-
+    render() {
+        
         return (
             <SafeAreaView style={{ flex: 1, backgroundColor: 'white' }}>
 

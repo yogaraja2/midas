@@ -7,7 +7,7 @@ import {
 } from 'react-native';
 import { createAppContainer, NavigationActions } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
-import SplashScreen from '_screens/SplashScreen'
+import SplashScreen from '_screens/SplashScreen';
 import Home from '_screens/Home';
 import AskAdvisor from '_screens/AskAdvisor';
 import ChooseOption from '_screens/ChooseOption';
@@ -15,6 +15,8 @@ import SelectAvatar from '_screens/SelectAvatar';
 import UserChoice from '_screens/UserChoice';
 import SelectDream from '_screens/SelectDream';
 import House from '_screens/House';
+import Cars from '_screens/Cars'
+import Dashboard from '_screens/Dashboard'
 
 
 
@@ -31,17 +33,10 @@ export default App;
 
 const AppNavigator = createStackNavigator({
 
-  House: {
-    screen: House,
-    navigationOptions: {
-      header: null
-    }
-  },
-
-  SelectDream: {
-    screen: SelectDream,
-    navigationOptions: {
-      header: null
+  Dashboard:{
+    screen:Dashboard,
+    navigationOptions:{
+      header:null
     }
   },
 
@@ -78,6 +73,24 @@ const AppNavigator = createStackNavigator({
   },
   UserChoice: {
     screen: UserChoice,
+    navigationOptions: {
+      header: null
+    }
+  },
+  SelectDream: {
+    screen: SelectDream,
+    navigationOptions: {
+      header: null
+    }
+  },
+  House: {
+    screen: House,
+    navigationOptions: {
+      header: null
+    }
+  },
+  Cars: {
+    screen: Cars,
     navigationOptions: {
       header: null
     }
