@@ -1,11 +1,12 @@
 import React from 'react';
 import { View, Text, Image, StyleSheet, TouchableOpacity, ScrollView, SafeAreaView } from 'react-native';
 
-const Cars = ({ navigation }) => {
-    const goToDashboard = () => {
-        navigation.navigate('Dashboard');
+const CarSelling = ({ navigation }) => {
+    const response = () => {
+        alert('clicked');
     }
     return (
+        
         <SafeAreaView style={styles.mainContainer}>
 
             <View style={styles.header}>
@@ -29,20 +30,26 @@ const Cars = ({ navigation }) => {
             </View>
 
             <Text style={styles.title}>Cars</Text>
+            <View style={styles.currentEquityContainer}>
+                <Text style={{ fontSize: 20, fontWeight: 'bold', color: 'white', alignSelf: 'center' }}>Current equity</Text>
+                <View style={styles.currentEquity}>
+                    <Image source={require('_assets/singleDollar.png')} style={styles.dollarIcon}></Image>
+                    <Text style={{ fontSize: 14, fontWeight: 'bold', color: '#A6ACBE' }}>120000</Text>
+                </View>
+            </View>
 
             <ScrollView>
 
-                <View style={styles.carContainer}>
-                    <View style={styles.carBackground}>
+                <View style={[styles.carContainer, { height: 236 }]}>
+                    <View style={[styles.carBackground, { height: 180 }]}>
                         <Image source={require('_assets/relisbleCar.png')} style={styles.relisbleCar}></Image>
-                        <Text style={styles.carName}>Relisble Car</Text>
+                        <Text style={styles.carName}>Are sure you want sell this car ?</Text>
                         <View style={styles.buttonContainer}>
-                            <View style={styles.moneyButton}>
-                                <Image source={require('_assets/singleDollar.png')} style={styles.dollarIcon}></Image>
-                                <Text style={styles.moneyText}>$50000</Text>
-                            </View>
-                            <TouchableOpacity style={styles.buyButton} onPress={goToDashboard}>
-                                <Text style={styles.buyText}>Buy</Text>
+                            <TouchableOpacity style={styles.buyButton} onPress={response}>
+                                <Text style={styles.buyText}>Yes</Text>
+                            </TouchableOpacity>
+                            <TouchableOpacity style={styles.buyButton} onPress={response}>
+                                <Text style={styles.buyText}>No</Text>
                             </TouchableOpacity>
                         </View>
                     </View>
@@ -57,7 +64,7 @@ const Cars = ({ navigation }) => {
                                 <Image source={require('_assets/singleDollar.png')} style={styles.dollarIcon}></Image>
                                 <Text style={styles.moneyText}>$60000</Text>
                             </View>
-                            <TouchableOpacity style={styles.buyButton} onPress={goToDashboard}>
+                            <TouchableOpacity style={styles.buyButton} onPress={response}>
                                 <Text style={styles.buyText}>Buy</Text>
                             </TouchableOpacity>
                         </View>
@@ -73,7 +80,7 @@ const Cars = ({ navigation }) => {
                                 <Image source={require('_assets/singleDollar.png')} style={styles.dollarIcon}></Image>
                                 <Text style={styles.moneyText}>$70000</Text>
                             </View>
-                            <TouchableOpacity style={styles.buyButton} onPress={goToDashboard}>
+                            <TouchableOpacity style={styles.buyButton} onPress={response}>
                                 <Text style={styles.buyText}>Buy</Text>
                             </TouchableOpacity>
                         </View>
@@ -89,7 +96,7 @@ const Cars = ({ navigation }) => {
                                 <Image source={require('_assets/singleDollar.png')} style={styles.dollarIcon}></Image>
                                 <Text style={styles.moneyText}>$80000</Text>
                             </View>
-                            <TouchableOpacity style={styles.buyButton} onPress={goToDashboard}>
+                            <TouchableOpacity style={styles.buyButton} onPress={response}>
                                 <Text style={styles.buyText}>Buy</Text>
                             </TouchableOpacity>
                         </View>
@@ -105,7 +112,7 @@ const Cars = ({ navigation }) => {
                                 <Image source={require('_assets/singleDollar.png')} style={styles.dollarIcon}></Image>
                                 <Text style={styles.moneyText}>$100000</Text>
                             </View>
-                            <TouchableOpacity style={styles.buyButton} onPress={goToDashboard}>
+                            <TouchableOpacity style={styles.buyButton} onPress={response}>
                                 <Text style={styles.buyText}>Buy</Text>
                             </TouchableOpacity>
                         </View>
@@ -259,6 +266,26 @@ const styles = StyleSheet.create({
         marginTop: -30,
         alignSelf: 'center'
     },
+    currentEquityContainer: {
+        width: '90%',
+        height: 56,
+        marginTop: 10,
+        backgroundColor: '#0057E7',
+        borderRadius: 5,
+        alignSelf: 'center',
+        flexDirection: 'row',
+        justifyContent: 'space-evenly',
+    },
+    currentEquity: {
+        width: 125,
+        height: 41,
+        backgroundColor: 'white',
+        alignSelf: 'center',
+        borderRadius: 5,
+        justifyContent: 'space-evenly',
+        flexDirection: 'row',
+        alignItems: 'center',
+    },
 });
 
-export default Cars;
+export default CarSelling;

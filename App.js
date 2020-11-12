@@ -15,8 +15,10 @@ import SelectAvatar from '_screens/SelectAvatar';
 import UserChoice from '_screens/UserChoice';
 import SelectDream from '_screens/SelectDream';
 import House from '_screens/House';
-import Cars from '_screens/Cars'
-import Dashboard from '_screens/Dashboard'
+import Cars from '_screens/Cars';
+import Dashboard from '_screens/Dashboard';
+import Leaderboard from '_screens/Leaderboard';
+import CarSelling from '_screens/CarSelling';
 
 
 
@@ -32,35 +34,26 @@ const App = () => {
 export default App;
 
 const AppNavigator = createStackNavigator({
-
-  Dashboard:{
-    screen:Dashboard,
-    navigationOptions:{
-      header:null
+  CarSelling: {
+    screen: CarSelling,
+    navigationOptions: {
+      header: null
     }
   },
-
   SplashScreen: {
     screen: SplashScreen,
     navigationOptions: {
       header: null
     }
   },
-
   Home: {
     screen: Home,
     navigationOptions: {
       header: null
     }
   },
-  AskAdvisor: {
-    screen: AskAdvisor,
-    navigationOptions: {
-      header: null
-    }
-  },
-  ChooseOption: {
-    screen: ChooseOption,
+  Leaderboard: {
+    screen: Leaderboard,
     navigationOptions: {
       header: null
     }
@@ -95,6 +88,24 @@ const AppNavigator = createStackNavigator({
       header: null
     }
   },
+  Dashboard: {
+    screen: Dashboard,
+    navigationOptions: {
+      header: null
+    }
+  },
+  AskAdvisor: {
+    screen: AskAdvisor,
+    navigationOptions: {
+      header: null
+    }
+  },
+  // ChooseOption: {
+  //   screen: ChooseOption,
+  //   navigationOptions: {
+  //     header: null
+  //   }
+  // },
 
 });
 

@@ -7,13 +7,13 @@ const Home = ({
 }) => {
     const routeName = navigation.state.routeName
     const clickLeaderBoard = () => {
-        navigation.navigate('ChooseOption');
+        navigation.navigate('Leaderboard');
     }
     const clickNewGame = () => {
         navigation.navigate('SelectAvatar');
     }
     const clickResume = () => {
-        navigation.navigate('AskAdvisor');
+        navigation.navigate('Dashboard');
     }
 
     return (
