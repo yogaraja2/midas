@@ -8,6 +8,9 @@ class Dashboard extends Component {
     goToAdvisor = () => {
         this.props.navigation.navigate('AskAdvisor');
     }
+    goToBalanceSheet = () =>{
+        this.props.navigation.navigate('BalanceSheet');
+    }
     render() {
         return (
             <SafeAreaView style={{ flex: 1 }}>
@@ -48,7 +51,7 @@ class Dashboard extends Component {
                                     <Image source={require('_assets/cashFlow.png')} style={styles.groupImage}></Image>
                                     <Text style={styles.groupText}>Cashflow</Text>
                                 </TouchableOpacity>
-                                <TouchableOpacity style={styles.groupButton}>
+                                <TouchableOpacity style={styles.groupButton} onPress={this.goToBalanceSheet}>
                                     <Image source={require('_assets/balance.png')} style={styles.groupImage}></Image>
                                     <Text style={styles.groupText}>Balance</Text>
                                 </TouchableOpacity>

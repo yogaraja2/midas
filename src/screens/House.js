@@ -180,7 +180,8 @@ const styles = StyleSheet.create({
         fontSize: 30,
         fontWeight: 'bold',
         color: '#0057E7',
-        marginStart: '35%',
+        textAlign:'center',
+        // marginStart: '35%',
         marginTop: '5%'
     },
     houseContainer: {

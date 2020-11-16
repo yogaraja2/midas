@@ -187,7 +187,8 @@ const styles = StyleSheet.create({
         fontSize: 30,
         fontWeight: 'bold',
         color: '#0057E7',
-        marginStart: '40%',
+        textAlign:'center',
+        // marginStart: '40%',
         marginTop: '5%'
     },
     carContainer: {

@@ -19,6 +19,7 @@ import Cars from '_screens/Cars';
 import Dashboard from '_screens/Dashboard';
 import Leaderboard from '_screens/Leaderboard';
 import CarSelling from '_screens/CarSelling';
+import BalanceSheet from '_screens/BalanceSheet';
 
 
 
@@ -34,12 +35,8 @@ const App = () => {
 export default App;
 
 const AppNavigator = createStackNavigator({
-  CarSelling: {
-    screen: CarSelling,
-    navigationOptions: {
-      header: null
-    }
-  },
+
+
   SplashScreen: {
     screen: SplashScreen,
     navigationOptions: {
@@ -96,6 +93,18 @@ const AppNavigator = createStackNavigator({
   },
   AskAdvisor: {
     screen: AskAdvisor,
+    navigationOptions: {
+      header: null
+    }
+  },
+  BalanceSheet: {
+    screen: BalanceSheet,
+    navigationOptions: {
+      header: null
+    }
+  },
+  CarSelling: {
+    screen: CarSelling,
     navigationOptions: {
       header: null
     }
