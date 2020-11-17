@@ -2,13 +2,16 @@ import React, { Component } from 'react';
 import { View, Image, Text, ImageBackground, SafeAreaView, StyleSheet, TouchableOpacity } from 'react-native';
 
 class Dashboard extends Component {
-    goToUserChoice = () =>{
+    goToUserChoice = () => {
         this.props.navigation.navigate('UserChoice');
+    }
+    goToCashflow = () => {
+        this.props.navigation.navigate('CashFlow');
     }
     goToAdvisor = () => {
         this.props.navigation.navigate('AskAdvisor');
     }
-    goToBalanceSheet = () =>{
+    goToBalanceSheet = () => {
         this.props.navigation.navigate('BalanceSheet');
     }
     render() {
@@ -17,12 +20,12 @@ class Dashboard extends Component {
                 <ImageBackground source={require('_assets/dashboard.png')} style={{ width: '100%', height: '100%' }}>
                     <View style={{ flex: 1 }}>
                         <TouchableOpacity onPress={() => {
-                                this.props.navigation.goBack();
-                            }}>
-                                <Image source={require('_assets/back.png')} style={styles.backLogo} />
-                            </TouchableOpacity>
+                            this.props.navigation.goBack();
+                        }}>
+                            <Image source={require('_assets/back.png')} style={styles.backLogo} />
+                        </TouchableOpacity>
                         <View style={styles.header}>
-                            
+
                             <View style={{ flexDirection: 'column' }}>
                                 <View style={styles.moneyBackground}>
                                     <Image source={require('_assets/singleDollar.png')} style={styles.dollarIcon}></Image>
@@ -47,7 +50,7 @@ class Dashboard extends Component {
                                 <Image source={require('_assets/nextTurn.png')} style={{ width: 167, height: 38, alignSelf: 'center' }}></Image>
                             </TouchableOpacity>
                             <View style={styles.group}>
-                                <TouchableOpacity style={styles.groupButton}>
+                                <TouchableOpacity style={styles.groupButton} onPress={this.goToCashflow}>
                                     <Image source={require('_assets/cashFlow.png')} style={styles.groupImage}></Image>
                                     <Text style={styles.groupText}>Cashflow</Text>
                                 </TouchableOpacity>

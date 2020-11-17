@@ -20,8 +20,8 @@ import Dashboard from '_screens/Dashboard';
 import Leaderboard from '_screens/Leaderboard';
 import CarSelling from '_screens/CarSelling';
 import BalanceSheet from '_screens/BalanceSheet';
-
-
+import HouseSelling from '_screens/HouseSelling';
+import CashFlow from '_screens/CashFlow';
 
 
 const App = () => {
@@ -35,7 +35,6 @@ const App = () => {
 export default App;
 
 const AppNavigator = createStackNavigator({
-
 
   SplashScreen: {
     screen: SplashScreen,
@@ -91,8 +90,8 @@ const AppNavigator = createStackNavigator({
       header: null
     }
   },
-  AskAdvisor: {
-    screen: AskAdvisor,
+  CashFlow: {
+    screen: CashFlow,
     navigationOptions: {
       header: null
     }
@@ -103,8 +102,20 @@ const AppNavigator = createStackNavigator({
       header: null
     }
   },
+  AskAdvisor: {
+    screen: AskAdvisor,
+    navigationOptions: {
+      header: null
+    }
+  },
   CarSelling: {
     screen: CarSelling,
+    navigationOptions: {
+      header: null
+    }
+  },
+  HouseSelling: {
+    screen: HouseSelling,
     navigationOptions: {
       header: null
     }
