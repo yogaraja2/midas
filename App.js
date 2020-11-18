@@ -22,7 +22,8 @@ import CarSelling from '_screens/CarSelling';
 import BalanceSheet from '_screens/BalanceSheet';
 import HouseSelling from '_screens/HouseSelling';
 import CashFlow from '_screens/CashFlow';
-
+import BalanceSheetDetails from '_screens/BalanceSheetDetails';
+import CashFlowYears from '_screens/CashFlowYears';
 
 const App = () => {
   LogBox.ignoreAllLogs(true);
@@ -120,12 +121,18 @@ const AppNavigator = createStackNavigator({
       header: null
     }
   },
-  // ChooseOption: {
-  //   screen: ChooseOption,
-  //   navigationOptions: {
-  //     header: null
-  //   }
-  // },
+  BalanceSheetDetails: {
+    screen: BalanceSheetDetails,
+    navigationOptions: {
+      header: null
+    }
+  },
+  CashFlowYears: {
+    screen: CashFlowYears,
+    navigationOptions: {
+      header: null
+    }
+  },
 
 });
 

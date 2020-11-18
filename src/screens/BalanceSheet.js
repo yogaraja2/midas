@@ -8,6 +8,9 @@ class BalanceSheet extends Component {
     goToHouseSelling = () => {
         this.props.navigation.navigate('HouseSelling');
     }
+    goToDetailedBalanceSheet = () =>{
+        this.props.navigation.navigate('BalanceSheetDetails');
+    }
     render() {
         return (
             <SafeAreaView style={styles.mainContainer}>
@@ -185,7 +188,7 @@ class BalanceSheet extends Component {
                         </View>
                     </View>
 
-                    <TouchableOpacity style={styles.infoButton}>
+                    <TouchableOpacity style={styles.infoButton} onPress={this.goToDetailedBalanceSheet}>
                         <Image source={require('_assets/info1.png')} style={{ width: 65, height: 27, alignSelf: 'center' }}></Image>
                     </TouchableOpacity>
                 </ScrollView>

@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import { View, Text, Image, StyleSheet, TouchableOpacity, ScrollView, SafeAreaView } from 'react-native';
 
 class CashFlow extends Component {
+    goToDetailedBalanceSheet = () =>{
+        this.props.navigation.navigate('BalanceSheetDetails');
+    }
     render() {
         return (
             <SafeAreaView style={styles.mainContainer}>
@@ -47,71 +50,71 @@ class CashFlow extends Component {
                                 <Text style={styles.money}>$250</Text>
                             </View>
                         </View>
-                        <TouchableOpacity style={{ width: '60%', height: 26, marginTop: 10, backgroundColor: '#0057E7', borderRadius: 5, alignSelf: 'center', justifyContent: 'center' }}>
-                            <Text style={{ textAlign: 'center', color: 'white', fontWeight: 'bold', fontSize: 13 }}>View Full Spending Details</Text>
+                        <TouchableOpacity style={styles.spendingDetailsButton}>
+                            <Text style={styles.spendingText}>View Full Spending Details</Text>
                         </TouchableOpacity>
 
-                        <Text style={{ marginTop: 40, fontSize: 15, fontWeight: 'bold', color: '#0057E7' }}>How much would you like to spend this year on ?</Text>
-                        <View style={{ width: '100%', height: 45, marginTop: 10, flexDirection: 'row', alignItems: 'center' }}>
+                        <Text style={styles.headLine}>How much would you like to spend this year on ?</Text>
+                        <View style={styles.expensiveDetails}>
                             <View style={[styles.asset, { width: '50%' }]}>
                                 <Text style={[styles.assetText, { fontWeight: 'bold' }]}>Living Expensive</Text>
                                 <Image source={require('_assets/info.png')} style={styles.infoIcon}></Image>
                             </View>
-                            <View style={{ width: '40%', height: 45, backgroundColor: '#F0F0F0', borderRadius: 5, justifyContent: 'center' }}>
-                                <Text style={{ color: '#D7D5D5', fontSize: 16, fontWeight: 'bold', textAlign: 'center' }}>$1200</Text>
+                            <View style={styles.moneyContainer}>
+                                <Text style={styles.moneyText}>$1200</Text>
                             </View>
-                            <Image source={require('_assets/emoji1.png')} style={{ width: 30, height: 30, marginLeft: 10 }}></Image>
+                            <Image source={require('_assets/emoji1.png')} style={styles.emoji}></Image>
                         </View>
-                        <View style={{ width: '100%', height: 45, marginTop: 10, flexDirection: 'row', alignItems: 'center' }}>
+                        <View style={styles.expensiveDetails}>
                             <View style={[styles.asset, { width: '50%' }]}>
                                 <Text style={[styles.assetText, { fontWeight: 'bold' }]}>Entertainment</Text>
                                 <Image source={require('_assets/info.png')} style={styles.infoIcon}></Image>
                             </View>
-                            <View style={{ width: '40%', height: 45, backgroundColor: '#F0F0F0', borderRadius: 5, justifyContent: 'center' }}>
-                                <Text style={{ color: '#D7D5D5', fontSize: 16, fontWeight: 'bold', textAlign: 'center' }}>$1200</Text>
+                            <View style={styles.moneyContainer}>
+                                <Text style={styles.moneyText}>$1200</Text>
                             </View>
-                            <Image source={require('_assets/sad.png')} style={{ width: 30, height: 30, marginLeft: 10 }}></Image>
+                            <Image source={require('_assets/sad.png')} style={styles.emoji}></Image>
                         </View>
-                        <View style={{ width: '100%', height: 45, marginTop: 10, flexDirection: 'row', alignItems: 'center' }}>
+                        <View style={styles.expensiveDetails}>
                             <View style={[styles.asset, { width: '50%' }]}>
                                 <Text style={[styles.assetText, { fontWeight: 'bold' }]}>Retirement Savings</Text>
                                 <Image source={require('_assets/info.png')} style={styles.infoIcon}></Image>
                             </View>
-                            <View style={{ width: '40%', height: 45, backgroundColor: '#F0F0F0', borderRadius: 5, justifyContent: 'center' }}>
-                                <Text style={{ color: '#D7D5D5', fontSize: 16, fontWeight: 'bold', textAlign: 'center' }}>$1200</Text>
+                            <View style={styles.moneyContainer}>
+                                <Text style={styles.moneyText}>$1200</Text>
                             </View>
-                            <Image source={require('_assets/smile.png')} style={{ width: 30, height: 30, marginLeft: 10 }}></Image>
+                            <Image source={require('_assets/smile.png')} style={styles.emoji}></Image>
                         </View>
 
-                        <Text style={{ marginTop: 40, fontSize: 15, fontWeight: 'bold', color: '#0057E7' }}>How much extra would you like to spend this year repaying these debts?</Text>
-                        <View style={{ width: '100%', height: 45, marginTop: 10, flexDirection: 'row', alignItems: 'center' }}>
+                        <Text style={styles.headLine}>How much extra would you like to spend this year repaying these debts?</Text>
+                        <View style={styles.expensiveDetails}>
                             <View style={[styles.asset, { width: '60%' }]}>
                                 <Text style={[styles.assetText, { fontWeight: 'bold' }]}>Credit Card</Text>
                                 <Image source={require('_assets/info.png')} style={styles.infoIcon}></Image>
                             </View>
-                            <View style={{ width: '40%', height: 45, backgroundColor: '#F0F0F0', borderRadius: 5, justifyContent: 'center' }}>
-                                <Text style={{ color: '#D7D5D5', fontSize: 16, fontWeight: 'bold', textAlign: 'center' }}>$1200</Text>
+                            <View style={styles.moneyContainer}>
+                                <Text style={styles.moneyText}>$1200</Text>
                             </View>
                         </View>
-                        <View style={{ width: '100%', height: 45, marginTop: 10, flexDirection: 'row', alignItems: 'center' }}>
+                        <View style={styles.expensiveDetails}>
                             <View style={[styles.asset, { width: '60%' }]}>
                                 <Text style={[styles.assetText, { fontWeight: 'bold' }]}>Car Loan</Text>
                                 <Image source={require('_assets/info.png')} style={styles.infoIcon}></Image>
                             </View>
-                            <View style={{ width: '40%', height: 45, backgroundColor: '#F0F0F0', borderRadius: 5, justifyContent: 'center' }}>
-                                <Text style={{ color: '#D7D5D5', fontSize: 16, fontWeight: 'bold', textAlign: 'center' }}>$1200</Text>
+                            <View style={styles.moneyContainer}>
+                                <Text style={styles.moneyText}>$1200</Text>
                             </View>
                         </View>
-                        <View style={{ width: '100%', height: 45, marginTop: 10, flexDirection: 'row', alignItems: 'center' }}>
+                        <View style={styles.expensiveDetails}>
                             <View style={[styles.asset, { width: '60%' }]}>
                                 <Text style={[styles.assetText, { fontWeight: 'bold' }]}>Student Loan</Text>
                                 <Image source={require('_assets/info.png')} style={styles.infoIcon}></Image>
                             </View>
-                            <View style={{ width: '40%', height: 45, backgroundColor: '#F0F0F0', borderRadius: 5, justifyContent: 'center' }}>
-                                <Text style={{ color: '#D7D5D5', fontSize: 16, fontWeight: 'bold', textAlign: 'center' }}>$1200</Text>
+                            <View style={styles.moneyContainer}>
+                                <Text style={styles.moneyText}>$1200</Text>
                             </View>
                         </View>
-                        <TouchableOpacity style={styles.infoButton}>
+                        <TouchableOpacity style={styles.infoButton} onPress={this.goToDetailedBalanceSheet}>
                             <Image source={require('_assets/info1.png')} style={{ width: 65, height: 27, alignSelf: 'center' }}></Image>
                         </TouchableOpacity>
                     </View>
@@ -235,6 +238,50 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         marginRight: 20,
         // bottom: 5,
+    },
+    spendingDetailsButton: {
+        width: '60%',
+        height: 26,
+        marginTop: 10,
+        backgroundColor: '#0057E7',
+        borderRadius: 5,
+        alignSelf: 'center',
+        justifyContent: 'center',
+    },
+    spendingText: {
+        textAlign: 'center',
+        color: 'white',
+        fontWeight: 'bold',
+        fontSize: 13,
+    },
+    headLine: {
+        marginTop: 40,
+        fontSize: 15,
+        fontWeight: 'bold',
+        color: '#0057E7',
+    },
+    expensiveDetails: {
+        width: '100%',
+        height: 45,
+        marginTop: 10,
+        flexDirection: 'row',
+        alignItems: 'center',
+    },
+    moneyContainer: {
+        width: '40%',
+        height: 45,
+        backgroundColor: '#F0F0F0',
+        borderRadius: 5,
+        justifyContent: 'center',
+    },
+    moneyText: {
+        color: '#D7D5D5',
+        fontSize: 16,
+        fontWeight: 'bold',
+        textAlign: 'center',
+    },
+    emoji:{
+        width: 30, height: 30, marginLeft: 10
     },
 });
 
