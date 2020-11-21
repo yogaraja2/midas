@@ -2,8 +2,11 @@ import React, { Component } from 'react';
 import { View, Text, Image, StyleSheet, TouchableOpacity, ScrollView, SafeAreaView } from 'react-native';
 
 class CashFlow extends Component {
-    goToDetailedBalanceSheet = () =>{
+    goToDetailedBalanceSheet = () => {
         this.props.navigation.navigate('BalanceSheetDetails');
+    }
+    goToYearWiseSheet = () => {
+        this.props.navigation.navigate('CashFlowYears');
     }
     render() {
         return (
@@ -50,7 +53,7 @@ class CashFlow extends Component {
                                 <Text style={styles.money}>$250</Text>
                             </View>
                         </View>
-                        <TouchableOpacity style={styles.spendingDetailsButton}>
+                        <TouchableOpacity style={styles.spendingDetailsButton} onPress={this.goToYearWiseSheet}>
                             <Text style={styles.spendingText}>View Full Spending Details</Text>
                         </TouchableOpacity>
 
@@ -280,7 +283,7 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         textAlign: 'center',
     },
-    emoji:{
+    emoji: {
         width: 30, height: 30, marginLeft: 10
     },
 });

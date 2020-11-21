@@ -14,16 +14,19 @@ class Dashboard extends Component {
     goToBalanceSheet = () => {
         this.props.navigation.navigate('BalanceSheet');
     }
+    goToWeb = () => {
+        this.props.navigation.navigate('Web');
+    }
     render() {
         return (
             <SafeAreaView style={{ flex: 1 }}>
                 <ImageBackground source={require('_assets/dashboard.png')} style={{ width: '100%', height: '100%' }}>
                     <View style={{ flex: 1 }}>
-                        <TouchableOpacity onPress={() => {
+                        {/* <TouchableOpacity onPress={() => {
                             this.props.navigation.goBack();
                         }}>
                             <Image source={require('_assets/back.png')} style={styles.backLogo} />
-                        </TouchableOpacity>
+                        </TouchableOpacity> */}
                         <View style={styles.header}>
 
                             <View style={{ flexDirection: 'column' }}>
@@ -66,7 +69,7 @@ class Dashboard extends Component {
                                     <Image source={require('_assets/stats.png')} style={styles.groupImage}></Image>
                                     <Text style={styles.groupText}>Stats</Text>
                                 </TouchableOpacity>
-                                <TouchableOpacity style={styles.groupButton}>
+                                <TouchableOpacity style={styles.groupButton} onPress={this.goToWeb}>
                                     <Image source={require('_assets/web.png')} style={styles.groupImage}></Image>
                                     <Text style={styles.groupText}>Web</Text>
                                 </TouchableOpacity>
@@ -82,10 +85,11 @@ class Dashboard extends Component {
 const styles = StyleSheet.create({
     header: {
         flex: 3,
-        width: '100%',
+        width: '90%',
+        marginTop:'10%',
         flexDirection: 'row',
-        justifyContent: 'space-around',
-        // marginTop: '5%'
+        justifyContent: 'space-between',
+        alignSelf:'center',
     },
     backLogo: {
         marginTop: 20,

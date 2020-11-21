@@ -53,7 +53,7 @@ class CashFlowYears extends Component {
             <SafeAreaView style={styles.mainContainer}>
                 <View style={styles.header}>
                     <TouchableOpacity onPress={() => {
-                        navigation.goBack();
+                        this.props.navigation.goBack();
                     }}>
                         <Image source={require('_assets/back.png')} style={styles.backLogo} />
                     </TouchableOpacity>

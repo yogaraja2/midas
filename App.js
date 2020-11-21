@@ -24,6 +24,7 @@ import HouseSelling from '_screens/HouseSelling';
 import CashFlow from '_screens/CashFlow';
 import BalanceSheetDetails from '_screens/BalanceSheetDetails';
 import CashFlowYears from '_screens/CashFlowYears';
+import Web from '_screens/Web';
 
 const App = () => {
   LogBox.ignoreAllLogs(true);
@@ -36,7 +37,7 @@ const App = () => {
 export default App;
 
 const AppNavigator = createStackNavigator({
-
+  
   SplashScreen: {
     screen: SplashScreen,
     navigationOptions: {
@@ -129,6 +130,12 @@ const AppNavigator = createStackNavigator({
   },
   CashFlowYears: {
     screen: CashFlowYears,
+    navigationOptions: {
+      header: null
+    }
+  },
+  Web: {
+    screen: Web,
     navigationOptions: {
       header: null
     }
