@@ -25,6 +25,7 @@ import CashFlow from '_screens/CashFlow';
 import BalanceSheetDetails from '_screens/BalanceSheetDetails';
 import CashFlowYears from '_screens/CashFlowYears';
 import Web from '_screens/Web';
+import DebtYears from '_screens/DebtYears';
 
 const App = () => {
   LogBox.ignoreAllLogs(true);
@@ -130,6 +131,12 @@ const AppNavigator = createStackNavigator({
   },
   CashFlowYears: {
     screen: CashFlowYears,
+    navigationOptions: {
+      header: null
+    }
+  },
+  DebtYears: {
+    screen: DebtYears,
     navigationOptions: {
       header: null
     }
