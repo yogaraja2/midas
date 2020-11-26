@@ -26,6 +26,9 @@ import BalanceSheetDetails from '_screens/BalanceSheetDetails';
 import CashFlowYears from '_screens/CashFlowYears';
 import Web from '_screens/Web';
 import DebtYears from '_screens/DebtYears';
+import Signup from '_screens/Signup';
+import Login from '_screens/Login';
+import SelectRole from '_screens/SelectRole';
 
 const App = () => {
   LogBox.ignoreAllLogs(true);
@@ -38,9 +41,27 @@ const App = () => {
 export default App;
 
 const AppNavigator = createStackNavigator({
-  
+
   SplashScreen: {
     screen: SplashScreen,
+    navigationOptions: {
+      header: null
+    }
+  },
+  Signup: {
+    screen: Signup,
+    navigationOptions: {
+      header: null
+    }
+  },
+  SelectRole: {
+    screen: SelectRole,
+    navigationOptions: {
+      header: null
+    }
+  },
+  Login: {
+    screen: Login,
     navigationOptions: {
       header: null
     }

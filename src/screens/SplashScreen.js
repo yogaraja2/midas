@@ -3,7 +3,7 @@ import { Image, SafeAreaView, StyleSheet } from 'react-native'
 const SplashScreen = (props) => {
 
     setTimeout(() => {
-        props.navigation.navigate('Home');
+        props.navigation.navigate('Signup');
     }, 3000);
     return (
         <SafeAreaView style={styles.container}>
