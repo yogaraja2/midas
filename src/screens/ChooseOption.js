@@ -1,7 +1,10 @@
 import React, { Component } from 'react'
-import { TouchableOpacity, View, Text, StyleSheet, Image } from 'react-native'
-
+import { TouchableOpacity, View, Text, StyleSheet, Image, SafeAreaView } from 'react-native'
 class ChooseOption extends Component {
+
+    constructor() {
+        super();
+    }
 
     render() {
         const goToHouse = () => {
@@ -14,36 +17,41 @@ class ChooseOption extends Component {
             alert('Image clicked')
         }
         return (
-            <View style={styles.mainContainer}>
-                <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+            <SafeAreaView style={styles.mainContainer}>
+
+                <View style={styles.header}>
+                    <TouchableOpacity onPress={() => {
+                        this.props.navigation.goBack();
+                    }}>
+                        <Image source={require('_assets/back.png')} style={styles.backLogo} />
+                    </TouchableOpacity>
                     <Image
                         source={require('_assets/midaslogo.png')}
-                        style={{ marginTop: 30, marginLeft: 30 }}
+                        style={styles.logo}
                     ></Image>
                     <TouchableOpacity onPress={goToLogo}>
-                        <Image source={require('_assets/dollor.png')} style={{ marginTop: 20, marginRight: 40 }}></Image>
+                        <Image source={require('_assets/dollor.png')}
+                            style={styles.moneyLogo}>
+                        </Image>
                     </TouchableOpacity>
                 </View>
 
-                <View style={{ marginVertical: '10%', alignItems: 'center' }}>
+                <View style={styles.buttonContainer}>
                     <TouchableOpacity
                         style={styles.button}
                         onPress={goToHouse}
                     >
-                        <View>
-                            <Text style={styles.text}>House</Text>
-                        </View>
+                        <Text style={styles.text}>House</Text>
                     </TouchableOpacity>
                     <TouchableOpacity
                         style={styles.button}
                         onPress={goToCar}
                     >
-                        <View>
-                            <Text style={styles.text}>Car</Text>
-                        </View>
+                        <Text style={styles.text}>Car</Text>
                     </TouchableOpacity>
                 </View>
-            </View>
+
+            </SafeAreaView>
         );
     }
 }
@@ -52,19 +60,44 @@ const styles = StyleSheet.create({
     mainContainer: {
         flex: 1,
     },
+    header: {
+        flexDirection: 'row',
+    },
+    backLogo: {
+        marginTop: 30,
+        marginLeft: 5,
+        width: 21,
+        height: 21,
+    },
+    buttonContainer: {
+        marginVertical: '10%',
+        alignItems: 'center',
+    },
     button: {
-        width: '80%',
-        height: 50,
-        backgroundColor: 'blue',
+        width: 346,
+        height: 66,
+        backgroundColor: '#0057E7',
         justifyContent: 'center',
         marginVertical: 10,
         borderRadius: 5
     },
     text: {
         textAlign: 'center',
-        fontSize: 22,
+        fontSize: 24,
         fontWeight: 'bold',
         color: 'white',
+    },
+    logo: {
+        marginTop: 30,
+        marginLeft: 11,
+        width: 35,
+        height: 21,
+    },
+    moneyLogo: {
+        width: 165,
+        height: 44,
+        marginTop: 20,
+        marginHorizontal: '31%',
     },
 });
 

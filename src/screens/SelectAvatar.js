@@ -1,104 +1,111 @@
 import React, { Component } from 'react';
-import { Image, View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { Image, View, Text, StyleSheet, TouchableOpacity, SafeAreaView } from 'react-native';
 import { Colors } from '_styles';
 
 class SelectAvatar extends Component {
-
     constructor() {
-        super();
+        super()
+        // this.state = { borderColor: 0 }
     }
 
+    goToUserChooice = (index) => {
+        // this.setState({ borderColor: index })
+        this.props.navigation.navigate('UserChoice');
+    }
     render() {
-        const response = () => {
-            alert('image clicked')
-        }
         return (
-            <View style={styles.mainContainer}>
-
+            <SafeAreaView style={styles.mainContainer}>
                 <View style={styles.header}>
                     <TouchableOpacity onPress={() => {
                         this.props.navigation.goBack();
                     }}>
-                        <Image source={require('_assets/back.png')} style={[styles.logo,{marginTop: 15}]} />
+                        <Image source={require('_assets/back.png')} style={styles.backLogo} />
                     </TouchableOpacity>
-                    <View style={styles.title}>
-                        <Image source={require('_assets/midaslogo.png')} style={styles.logo} />
-
-                        <Text style={styles.text}>Select Your Avatar</Text>
-                    </View>
-                    <View style={styles.header} />
+                    <Image source={require('_assets/midaslogo.png')} style={styles.logo} />
+                    <Text style={styles.text}>Select Your Avatar</Text>
                 </View>
 
-                <View>
-                    <TouchableOpacity onPress={response}>
+                <View style={styles.imageContainer}>
+                    <TouchableOpacity onPress={this.goToUserChooice}>
                         <Image source={require('_assets/male1.png')}
-                            style={styles.firstImage}></Image>
+                            style={styles.image}></Image>
+                        {/* { borderColor: this.state.borderColor == 1 ? '#0057E7' : 'grey' } */}
                     </TouchableOpacity>
-                </View>
-                <View style={styles.imageContainer}>
-                    <TouchableOpacity onPress={response}>
-                        <Image source={require('_assets/male2.png')}
-                            style={styles.leftSideImage}></Image>
-                    </TouchableOpacity>
-                    <TouchableOpacity onPress={response}>
+
+                    <TouchableOpacity onPress={this.goToUserChooice}>
                         <Image source={require('_assets/male3.png')}
-                            style={styles.rightSideImage}></Image>
+                            style={styles.image}></Image>
                     </TouchableOpacity>
-                </View>
-                <View style={styles.imageContainer}>
-                    <TouchableOpacity onPress={response}>
-                        <Image source={require('_assets/female1.png')}
-                            style={styles.leftSideImage}></Image>
-                    </TouchableOpacity>
-                    <TouchableOpacity onPress={response}>
-                        <Image source={require('_assets/female2.png')}
-                            style={styles.rightSideImage}></Image>
+                    <TouchableOpacity onPress={this.goToUserChooice}>
+                        <Image source={require('_assets/female3.png')}
+                            style={styles.image}></Image>
                     </TouchableOpacity>
                 </View>
 
-            </View>
+                <View style={styles.imageContainer}>
+                    <TouchableOpacity onPress={this.goToUserChooice}>
+                        <Image source={require('_assets/male2.png')}
+                            style={styles.image}></Image>
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress={this.goToUserChooice}>
+                        <Image source={require('_assets/female2.png')}
+                            style={styles.image}></Image>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity onPress={this.goToUserChooice}>
+                        <Image source={require('_assets/female1.png')}
+                            style={styles.image}></Image>
+                    </TouchableOpacity>
+                </View>
+
+            </SafeAreaView>
         );
     }
 }
 
 const styles = StyleSheet.create({
     mainContainer: {
-        flex: 1
+        flex: 1,
+        backgroundColor: 'white'
     },
     header: {
+        width: '100%',
         flexDirection: 'row',
-        marginTop: 10,
+        marginTop: 20,
         marginStart: 10,
-        justifyContent: 'space-between'
-    },
-    title: {
-        flexDirection: 'row',
     },
     logo: {
-        alignSelf: 'center',
-        marginTop: 10
+        marginTop: 15,
+        marginLeft: 10,
+        width: 35,
+        height: 21,
+    },
+    backLogo: {
+        marginTop: 15,
+        marginLeft: 5,
+        width: 21,
+        height: 21,
     },
     text: {
-        width: '70%',
         color: Colors.BUTTON_TEXT,
         fontWeight: 'bold',
         fontSize: 24,
         marginTop: 10,
-        alignSelf: 'center',
-        marginStart: 15,
+        alignSelf: 'flex-start',
+        marginStart: 30,
     },
     imageContainer: {
-        marginTop: 25, flexDirection: 'row', justifyContent: 'center'
+        marginTop: '10%',
+        flexDirection: 'row',
+        justifyContent: 'space-evenly'
     },
-    firstImage: {
-        marginTop: '10%', borderWidth: 1.5, borderColor: 'navy', borderRadius: 5, alignSelf: 'center'
-    },
-    leftSideImage: {
-        borderWidth: 1.5, borderColor: 'navy', borderRadius: 5
-    },
-    rightSideImage: {
-        marginLeft: 25, borderWidth: 1.5, borderColor: 'navy', borderRadius: 5
-    },
+    image: {
+        width: 72,
+        height: 80,
+        borderWidth: 1.5,
+        borderColor: '#0057E7',
+        borderRadius: 5,
+    }
 });
 
 export default SelectAvatar;
